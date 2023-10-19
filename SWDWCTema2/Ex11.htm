@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/Javascript">
+    // Escriviu dues funcions que calculin el factorial d'un numero, una recursiva i una iterativa. 
+    // Demanau el número utilitzant un prompt i mostrau el seu factorial a la pàgina.
+        function factorialRecursiu(nombre) {
+            if (nombre==0){
+                return 1;
+            }
+            else{
+                return nombre * factorialRecursiu(nombre - 1);
+            }
+        }
+        function factorialIteratiu(nombre) {
+            let resultat = 1;
+            for (let i = 2; i <= nombre; i++){
+                resultat = resultat * i;
+            }
+            return resultat;
+        }
+        let nombre=parseInt(prompt('Introdueix un nombre'));
+        console.log('El factorial recursiu del nombre '+nombre+' és: '+factorialRecursiu(nombre));
+        console.log('El factorial iteratiu del nombre '+nombre+' és: '+factorialIteratiu(nombre));
+    </script>
+</body>
+</html>

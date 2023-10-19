@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/Javascript">
+        //Donats tres números, a, b i c ordenar-los de forma que al final a<=b<=c.
+        var a = prompt('Introdueix el primer nombre:');
+        var b = prompt('Introdueix el segon nombre:');
+        var c = prompt('Introdueix el tercer nombre:');
+
+        if (isNaN(a) || isNaN(b) || isNaN(c)) {
+            console.log("Torna a introduir nombres:");
+        } else {
+            let temp;
+            if (a > b) {
+                temp = a;
+                a = b;
+                b = temp;
+            }
+            if (b > c) {
+                temp = b;
+                b = c;
+                c = temp;
+            }
+            if (a > b) {
+                temp = a;
+                a = b;
+                b = temp;
+            }
+
+            console.log('Nombres ordenats: '+a+', '+b+', '+c+', ');
+        }
+    </script>
+</body>
+</html>

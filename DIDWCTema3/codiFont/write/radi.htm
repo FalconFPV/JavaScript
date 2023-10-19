@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ativitat 2 Calcular radi d'una circumferència</h1>
+	<form>
+		<label for="radi">Radi:</label>
+		<input type="number" id="radi" name="radi"><br><br>
+		<button type="button" onclick="calcularCircunferencia()">Calcular</button>
+		<button type="button" onclick="calcularCircunferenciabyid()">Calcular2</button>
+	</form>
+	<p id="longitud"></p>
+	<script>
+		function calcularCircunferencia() {
+			var radi = document.getElementById("radi").value;
+
+			var longitud = 2 * Math.PI * radi;
+			
+			document.write("La longitud de la circumferència és: " + longitud);
+		}
+		function calcularCircunferenciabyid() {
+			var radi = document.getElementById("radi").value;
+
+			var longitud = 2 * Math.PI * radi;
+			
+			document.getElementById("longitud").innerHTML = "La longitud de la circumferència és: " + longitud;
+		}
+	</script>
+</body>
+</html>

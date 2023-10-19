@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script src="js/utlitats.js"></script>
+</head>
+<body>
+    <script type="text/Javascript">
+        // A utilitats.js inclou dues funcions, una per validar si el paràmetre que rep és un número enter i una altra per validar si el paràmetre és un nombre amb decimals. 
+        // Validar vol dir que tornen true o false, no que mostrin cap missatge. Crea validacions.html per a comprovar que funcionen correctament.   
+        console.log("Comprovació de la funció de validació d'enters:");
+
+        console.log("5 és un enter? ");
+        var num = 5;
+        if(validarnombresencer(num)==true){
+            console.log('Si');
+        }
+        else{
+            console.log('No');
+        }
+
+        console.log("'hola' és un enter? ");
+        var num = 'Hola';
+        if(validarnombresencer(num)==true){
+            console.log('Si');
+        }
+        else{
+            console.log('No');
+        }
+
+        console.log("Comprovació de la funció de validació de decimals:");
+
+        console.log("5.5 és un decimal? ");
+        var num = 5.5;
+        if(validarnombredecimal(num)==true){
+            console.log('Si');
+        }
+        else{
+            console.log('No');
+        }
+
+        console.log("'hola' és un decimal? ");
+        var num = 'Hola';
+        if(validarnombredecimal(num)==true){
+            console.log('Si');
+        }
+        else{
+            console.log('No');
+        }
+        //Comprovació ValidarTelefon
+        let ntel=633999345;
+        let prefix=6;
+        validarTelefon(ntel,prefix);
+        let ntel2=971349220;
+        let prefix2=9;
+        validarTelefon(ntel2,prefix2);
+        //Comprovació ValidarData
+        let dia =31;
+        let mes= 13;
+        let any= 2003;
+        validarData(dia, mes, any);
+        //Comprovació ValidarNif
+        console.log(validarNif('12345678A'));
+        console.log(validarNif('123456789')); 
+        console.log(validarNif('43477104C')); 
+        //Comprovació ValidarObligatori
+        let a=2;
+        let b;
+        let c=null
+        let d='      ';
+        console.log(validarObligatori(a));
+        console.log(validarObligatori(b));
+        console.log(validarObligatori(c));
+        console.log('d: '+validarObligatori(d));
+    </script>
+</body>
+</html>

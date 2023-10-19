@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        // EXERCICI 2. Crea la pàgina modulDinsHTML.html. Crea un script dins de l’html i 
+        // utilitza algunes de les validacions. Mostra les dades validades i el 
+        // resultat de la validació dins l’HTML.
+        // Importa només les validacions que necessitis.
+        import { validarNif, validarObligatori} from "./js/modulfuncions.js";
+        const nif ='12345678D';
+        const argument = 'Hola';
+        const esnifvalid= validarNif(nif);
+        const esargumentvalid=validarObligatori(argument);
+        console.log('El NIF ' + nif + ' es ' + (esnifvalid ? 'vàlid' : 'invalid'));
+        console.log('Largument "' + argument + '" es ' + (esargumentvalid ? 'vàlid' : 'invalid'));
+    </script>
+</body>
+</html>

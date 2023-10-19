@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>EXERCICI 8</h2>
+    <div id="ex8"></div>
+    <h2>EXERCICI 9</h2>
+    <div id="ex9"></div>
+</body>
+<script>
+    // EXERCICI 8. Crea la pàgina set.html. Crea un conjunt i afegeix-li valors. Comprova que no conté duplicats mostrant el seu contingut per la pantalla.
+    function mostrarConjuntSenseDuplicats() {
+        var conjunt = new Set();
+
+        conjunt.add(1);
+        conjunt.add(2);
+        conjunt.add(3);
+        conjunt.add(2); // Aquest no es duplica, ja que el conjunt no accepta elements repetits
+
+        document.getElementById('ex8').innerHTML = 'Contingut original del conjunt: ' + [...conjunt].join(', ');
+
+        var arraySenseDuplicats = [...conjunt];
+
+        document.getElementById('ex8').innerHTML += '<br>Contingut sense duplicats: ' + arraySenseDuplicats.join(', ');
+    }
+    window.onload = mostrarConjuntSenseDuplicats;
+    // EXERCICI 9. Crea una funció que rebi un array i el torni sense duplicats. Utilitza un conjunt per fer-ho. Pots crear un array nou per guardar la versió sense duplicats.
+    function senseDuplicats(array) {
+        return [...new Set(array)];
+    }
+    var arrayOriginal = [1, 2, 3, 2, 4, 5, 4];
+    var arraySenseDuplicats2 = senseDuplicats(arrayOriginal);
+    document.getElementById('ex9').innerHTML += 'Array original:'+ arrayOriginal+'<br>';
+    document.getElementById('ex9').innerHTML += 'Array sense duplicats:'+ arraySenseDuplicats2;
+</script>
+</html>

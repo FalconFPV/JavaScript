@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script src="js/utlitats.js"></script>
+</head>
+<body>
+    <script type="text/Javascript">
+    // A utilitats.js afegeix una funció per llegir valors numèrics enters. La funció demanarà el nombre a l'usuari amb un prompt, 
+    // comprovarà que el que ha escrit l'usuari és un enter 
+    // i si no ho és en demanarà un altre.  No acabarà fins que l'usuari entri un enter. Modifica calculadora.html de forma que 
+    // ara demani a l'usuari dos números enters i realitzi totes les operacions amb aquests dos números. 
+        let n1= llegirenters();
+        let n2= llegirenters();
+        console.log("Suma: " + suma(n1, n2));
+        console.log("Resta: " + resta(n1, n2));
+        console.log("Multiplicació: " + multiplicacio(n1, n2));
+        console.log("Divisió: " + divisio(n1, n2));
+        console.log("Potència: " + potencia(n1, n2));
+    </script>
+</body>
+</html>

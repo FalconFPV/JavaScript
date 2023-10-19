@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altres Funcions JavaScript</title>
+</head>
+    <!-- EXERCICI 11.  Crea una pàgina altres.html.-->
+<body>
+    <!-- Codificar i decodificar una URL amb encodeURI i encodeURIComponent -->
+    <div>
+        <h2>Codificació i Decodificació d'URL</h2>
+        <p>URL original: http://www.iespaucasesnoves.cat?nom="jo mateix"</p>
+        <p>URL codificada amb encodeURI: <span id="encodeURIResult"></span></p>
+        <p>URL codificada amb encodeURIComponent: <span id="encodeURIComponentResult"></span></p>
+    </div>
+
+    <!-- Simular el llançament d'una moneda amb Math.random -->
+    <div>
+        <h2>Llançament de Moneda</h2>
+        <p id="coinResult"></p>
+    </div>
+
+    <!-- Crear una funció amb l'objecte Function -->
+    <div>
+        <h2>Funció creada amb l'objecte Function</h2>
+        <p id="functionResult"></p>
+    </div>
+
+    <script>
+        // EXERCICI 12. Utilitza els mètodes de l'objecte global per a codificar i decodificar una URL
+        // per exemple http://www.iespaucasesnoves.cat?nom=”jo mateix”. Utilitza encodeURI i encodeURIComponent.
+        var urlOriginal = 'http://www.iespaucasesnoves.cat?nom="jo mateix"';
+        var urlCodificadaURI = encodeURI(urlOriginal);
+        var urlCodificadaURIComponent = encodeURIComponent(urlOriginal);
+
+        document.getElementById('encodeURIResult').textContent = urlCodificadaURI;
+        document.getElementById('encodeURIComponentResult').textContent = urlCodificadaURIComponent;
+
+        // EXERCICI 13. Utilitza el mètode random de Math per a simular el llançament d'una moneda.
+        var randomNum = Math.random();
+        var resultatMoneda = randomNum < 0.5 ? 'Cara' : 'Creu';
+
+        document.getElementById('coinResult').textContent = 'Resultat del llançament de la moneda: ' + resultatMoneda;
+
+        // EXERCICI 14. Crea una funció amb l’objecte Function.
+        var funcioPersonalitzada = new Function('num1', 'num2', 'return num1 + num2;');
+        var resultatFuncio = funcioPersonalitzada(5, 3);
+
+        document.getElementById('functionResult').textContent = 'Resultat de la funció personalitzada: ' + resultatFuncio;
+    </script>
+</body>
+</html>

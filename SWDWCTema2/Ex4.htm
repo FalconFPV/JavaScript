@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/Javascript">
+        //Defineix dues variables, anomenades inici i fi, i assignau-lis valors. Mostra a la pàgina tots els sencers entre 
+        //inici i fi (inclosos) de forma ascendent, utilitzant un while. Ha de funcionar tant si inici >= fi com si fi <=inici.
+        var inici = parseInt(prompt('Introdueix un inici:'));
+        var fi = parseInt(prompt('Introdueix un fi:'));
+
+        if(inici>=fi){
+            while(inici>=fi){
+                console.log(fi);
+                fi++;
+            }
+        }
+        else{
+            while(fi>=inici){
+                console.log(inici);
+                inici++;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../codiFont/js/utilitats.js"></script>
+</head>
+<body>
+    <!-- Crea una pàgina arrays.html. -->
+    <div id="mostrar"></div>
+    <br>
+    <div id="mostrar1"></div>
+    <br>
+    <div id="mostrar3"></div>
+    <br>
+    <p id="mostrarfrase"></p>
+    <br>
+    <p id="mostrarfraseinvertida"></p>
+    <br>
+    <p id="proves"></p>
+    <br>
+    <p id="ordenar"></p>
+    <br>
+    <p id="paraulesInvertides"></p>
+    <br>
+    <P id="sumatotal"></P>
+</body>
+<script>
+    window.onload=function() {
+        // EXERCICI 1. Afegeix a l’onload un array de 10 posicions. 
+        // Assigna valors de diferent tipus a aquestes posicions.
+        let array =new Array(10,'hola',1,false,'si',3,5,7,9,22);
+        // EXERCICI 2. Assigna un valor a la posició 15.
+        array[15]='pos 15';
+        //EXERCICI 3. Recorre l'array utilitzant l'index.
+        for(let index=0; index<10; index++){
+            document.getElementById('mostrar').innerHTML += array[index]+' ';
+        }
+        //EXERCICI 4. Recorre l'array utilitzant el for(let i in valors)
+        for(let index in array){
+            document.getElementById('mostrar1').innerHTML += array[index]+' ';
+        }
+        //EXERCICI 5. Recorre l'array utilitzant el for(let v of valors)
+        for(let index of array){
+            document.getElementById('mostrar3').innerHTML += index+' ';
+        }
+        //EXERCICI 7. Crea un array amb tres paraules i un altre amb dues. Concatena'ls.
+        let array1=new Array('un','dos','tres');
+        let array2=new Array('cuatre','cinc');
+        let array3= array1.concat(array2);
+        //EXERCICI 8. Amb l'array resultant crea una frase.
+        let frase = '';
+        for (let index in array3) {
+            frase += array3[index]+' ';
+        }
+        document.getElementById('mostrarfrase').innerHTML = frase;
+        //EXERCICI 9. Inverteix l'array i monta una frase.
+        // Invertir el array
+        array3.reverse();
+        let fraseinvertida = '';
+        for (let index in array3) {
+            fraseinvertida += array3[index]+' ';
+        }
+        document.getElementById('mostrarfraseinvertida').innerHTML = fraseinvertida;
+        }
+        // EXERCICI 10. Implementa una pila utilitzant els mètodes que proporciona l'array. 
+        // És a dir, crea un array buit, utilitza push per afegir elements i pop per recuperar-los. 
+        // Comprova que realment és una estructura LIFO.Implementa una pila utilitzant els mètodes 
+        // que proporciona l'array. És a dir, crea un array buit, utilitza push per afegir elements 
+        // i pop per recuperar-los. Comprova que realment és una estructura LIFO.
+        let arr=new Array();
+        arr.push(1);
+        arr.push(2);
+        for(let index in arr){
+            document.getElementById('proves').innerHTML += 'Array abans de pop: '+arr[index]+' ';
+        }
+        const x= arr.pop(2);
+        for(let index in arr){
+            document.getElementById('proves').innerHTML += 'Array despres de pop: '+arr[index]+' ';
+        }
+        document.getElementById('proves').innerHTML += 'Constant que llevam: '+x;
+        //EXERCICI 11. Crea un array de 20 valors numèrics entre 1 i 100. Ordena'ls de forma ascendent utilitzant el mètode sort.
+        let valors = [];
+        for (let i = 0; i < 20; i++) {
+            valors.push(Math.floor(Math.random() * 100) + 1);
+        }
+        valors.sort(function(a, b) {
+            return a - b;
+        });
+        document.getElementById('ordenar').innerHTML = 'Valors ordenats: ' + valors.join(', ');
+        //EXERCICI 12. Crea un array que contengui tres o quatre paraules. Utilitza map per generar un array amb les paraules invertides. 
+        //Per exemple, si la primera paraula és array la funció del map l’ha de convertir en yarra.
+        let paraules = new Array('joan', 'company', 'pastor');
+        let paraulesInvertides = paraules.map(function(paraula) {
+            return paraula.split('').reverse().join('');
+        });
+        document.getElementById('paraulesInvertides').innerHTML = 'Array amb paraules invertides: '+paraulesInvertides;
+        //EXERCICI 13. Crea una funció que sumi tots els valors d’un array utilitzant reduce.
+        let dades = [1, 2, 3, 4];
+        let total = dades.reduce((anterior, actual) => anterior + actual);
+        document.getElementById('sumatotal').innerHTML = total.toString();
+</script>
+</html>

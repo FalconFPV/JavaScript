@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demana i Mostra Paraula</title>
+    <!-- EXERCICI 12. Crea una pàgina amb dos botons amb la següent funcionalitat definida dins l'onload:
+    El primer botó demanarà una paraula a l'usuari amb un prompt.
+    El segon botó mostrarà la paraula introduïda per l'usuari dins un paràgraf de la pàgina
+    No podeu utilitzar variables globals. -->
+</head>
+<body>
+
+    <button id="demanaParaula">Demanar Paraula</button>
+    <button id="mostraParaula">Mostrar Paraula</button>
+    <p id="paraulaMostrada"></p>
+
+    <script>
+        window.onload = function() {
+            // Funció per demanar la paraula a l'usuari
+            document.getElementById('demanaParaula').addEventListener('click', function() {
+                var paraula = prompt('Introdueix una paraula:');
+                // Guardar la paraula com a propietat de l'element del botó
+                this.paraula = paraula;
+            });
+
+            // Funció per mostrar la paraula en un paràgraf
+            document.getElementById('mostraParaula').addEventListener('click', function() {
+                // Obtindre la paraula des de la propietat de l'element del primer botó
+                var paraulaMostrada = document.getElementById('demanaParaula').paraula;
+                // Mostrar la paraula en un paràgraf
+                document.getElementById('paraulaMostrada').innerText = "Paraula introduïda: " + paraulaMostrada;
+            });
+        };
+    </script>
+
+</body>
+</html>

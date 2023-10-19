@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- EXERCICI 5. Crea un mòdul que contengui només la funció potencia del fitxer utilitats.js 
+    Fes l’exportació per defecte d’aquesta funció. Crea la pàgina importDefecte.html. 
+    Utilitza la funció del mòdul per calcular 5 elevat a 3 i mostra el resultat dins 
+    l’HTML. -->
+    <script type="module">
+        import potencia from './js/modulpotencia.js'
+        const num=5;
+        const exponent=3;
+        const potencianombre=potencia(num,exponent);
+        console.log(potencianombre);
+    </script>
+</body>
+</html>

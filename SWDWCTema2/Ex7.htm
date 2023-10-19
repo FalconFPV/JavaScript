@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/Javascript">
+    // Crea un script que mostri les lletres de l'alfabet i al costat indiqui si es tracta 
+    // d'una vocal o d'una consonant. String.fromCharCode(index) torna el caràcter corresponent al codi ASCII index. 
+    // En farem tres versions:
+
+    // Amb un if per a cada vocal if() else if....
+    for(let i=65;i<=90;i++){
+        if(i==65){
+            console.log(String.fromCharCode(i)+' Vocal');
+        }
+        else if(i==69){
+            console.log(String.fromCharCode(i)+' Vocal');
+        }
+        else if(i==73){
+            console.log(String.fromCharCode(i)+' Vocal');
+        }
+        else if(i==79){
+            console.log(String.fromCharCode(i)+' Vocal');
+        }
+        else if(i==85){
+            console.log(String.fromCharCode(i)+' Vocal');
+        }
+        else{
+            console.log(String.fromCharCode(i)+' Consonant');
+        }
+
+    }
+    // Amb un sol if() else.
+    for(let i=65;i<=90;i++){
+        if(i==65||i==85||i==79||i==73||i==69){
+            console.log(String.fromCharCode(i)+' Vocal');
+        }
+        else{
+            console.log(String.fromCharCode(i)+' Consonant');
+        }
+    }
+    // Amb un switch. Recorda de posar break
+    for(let i=65;i<=90;i++){
+        switch(i){
+            case 65:
+                console.log(String.fromCharCode(i)+' Vocal');
+                break;
+            case 69:
+                console.log(String.fromCharCode(i)+' Vocal');
+                break;
+            case 73:
+                console.log(String.fromCharCode(i)+' Vocal');
+                break;            
+            case 79:
+                console.log(String.fromCharCode(i)+' Vocal');
+                break;            
+            case 85:
+                console.log(String.fromCharCode(i)+' Vocal');
+                break;
+            default:
+                console.log(String.fromCharCode(i)+' Consonant');
+        }
+    }
+    </script>
+</body>
+</html>

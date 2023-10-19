@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- EXERCICI 10. Crea la pàgina maps.html. Crea un mapa. -->
+<body>
+    <div>
+        <h2>Valors del Mapa</h2>
+        <div id="mostrarValors"></div>
+    </div>
+
+    <div>
+        <h2>Claus del Mapa</h2>
+        <div id="mostrarClaus"></div>
+    </div>
+
+    <div>
+        <h2>Entrades del Mapa</h2>
+        <div id="mostrarEntrades"></div>
+    </div>
+
+    <div>
+        <h2>Valor associat a la clau</h2>
+        <label for="clauInput">Introdueix la clau: </label>
+        <input type="text" id="clauInput">
+        <button onclick="obtenirValorAssociat()">Obtenir Valor</button>
+        <div id="mostrarValorAssociat"></div>
+    </div>
+
+    <script>
+        // Afegeix al mapa un parell d’entrades on la clau sigui el número d’un esportista (futbol, basquet, ...) i el valor el seu nom.
+        var mapaEsportistes = new Map();
+        mapaEsportistes.set('futbol', 'Lionel Messi');
+        mapaEsportistes.set('basquet', 'LeBron James');
+        //Mostra tots els valors del mapa a l’HTML.
+        document.getElementById('mostrarValors').innerHTML = 'Valors del Mapa: ' + [...mapaEsportistes.values()].join(', ');
+        //Mostra totes les claus del mapa a l’HTML.
+        document.getElementById('mostrarClaus').innerHTML = 'Claus del Mapa: ' + [...mapaEsportistes.keys()].join(', ');
+        //Mostra totes les entrades, els parells clau – valor del mapa.
+        document.getElementById('mostrarEntrades').innerHTML = 'Entrades del Mapa: ';
+        for (let [clau, valor] of mapaEsportistes) {
+            document.getElementById('mostrarEntrades').innerHTML += clau + ' – ' + valor + '<br>';
+        }
+        //Utilitza una clau per tornar el valor associat. Inclou tant la clau com el valor a l’HTML.
+        function obtenirValorAssociat() {
+            var clau = document.getElementById('clauInput').value;
+            var valorAssociat = mapaEsportistes.get(clau);
+            document.getElementById('mostrarValorAssociat').innerHTML = 'Valor associat a la clau "' + clau + '": ' + valorAssociat;
+        }
+    </script>
+</body>
+</html>

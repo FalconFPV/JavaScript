@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/funcions.js"></script>
+</head>
+<body>
+    <script type="text/Javascript">
+        // EXERCICI 22. Escriu el fitxer excepcions.html. Aquest fitxer ha d’incorporar funcions.js. 
+        // Ha de demanar dos valors sencers o reals amb un prompt i els ha de passar a la 
+        // funció suma. Si hi ha un error l’ha de capturar i mostrar un alert amb el 
+        // missatge rebut.
+        let a = prompt('Introdueix el primer nombre:');
+        let b = prompt('Introdueix el segon nombre:');
+        try {
+        let resultat =sumavalors(a, b);
+        alert('El resultat de la suma és:'+resultat);
+      } catch (error) {
+        alert('Error: Prova error');
+      }
+    </script>
+</body>
+</html>

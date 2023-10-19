@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <!-- EXERCICI 7. Crea una pàgina string.html. Utilitza els mètodes wrapper HTML per a generar diversos enllaços i àncores. -->
+<body>
+    <h2 id="seccio1">EXERCICI 7</h2>
+    <div id="ex7"></div>
+    <div id="ex7.1"></div>
+<script>
+    window.onload = function() {
+        var myString = new String("Exemple de manipulació de strings");
+
+        // Afegir un enllaç utilitzant el mètode wrapper
+        document.getElementById('ex7').innerHTML=(myString.link("https://paucasesnovescifp.cat/") + "<br>");
+
+        // Afegir una àncora utilitzant el mètode wrapper
+        document.getElementById('ex7.1').innerHTML=(myString.anchor("seccio1") + "<br>");
+    };
+</script>
+</body>
+</html>

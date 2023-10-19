@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>EXERCICI 1</h2>
+    <div id="ex1"></div>
+    <h2>EXERCICI 2</h2>
+    <div id="ex2"></div>
+    <h2>EXERCICI 3</h2>
+    <div id="ex3"></div>
+    <h2>EXERCICI 4</h2>
+    <div id="ex4"></div>
+    <h2>EXERCICI 5</h2>
+    <div id="ex5"></div>
+    <h2>EXERCICI 6</h2>
+    <div id="ex6"></div>
+</body>
+<script>
+    window.onload =function(){
+        // EXERCICI 1. Crea una pàgina date.html. Dins crea un objecte date a partir d'una cadena.
+        var dateString = "2021-10-01"; var dateObject = new Date(dateString);
+        document.getElementById('ex1').innerHTML=("La data es: " + dateObject.toLocaleString());
+        // EXERCICI 2. Crea un objecte date a partir de les dades any, mes, dia, hores, minuts, segons.
+        var data = new Date(2009, 5, 1, 19, 29, 39);
+        document.getElementById('ex2').innerHTML=('La data és: '+data.toLocaleString());
+        // EXERCICI 3. De l'objecte Date creat a l'exercici anterior, recupera tots els seus elements: any, mes, data, ...
+        var any = data.getFullYear();
+        var mes = data.getMonth() + 1;
+        var dia = data.getDate();
+        var hores = data.getHours();
+        var minuts = data.getMinutes();
+        var segons = data.getSeconds();
+	    document.getElementById('ex3').innerHTML = "Any: " + any + "<br>Mes: " + mes + "<br>Dia: " + dia + "<br>Hores: " + hores + "<br>Minuts: " + minuts + "<br>Segons: " + segons;
+        // EXERCICI 4. Escriu una funció que ens digui si una data determinada cau en cap de setmana (dissabte o diumenge).
+        function datacapdesetmana(data) {
+            if(data.getDay()==0 || data.getDay()==6){
+                return 'El dia de la data SI cau en cap de setmana';
+            }
+            else{
+                return 'El dia de la data NO cau en cap de setmana';
+            }
+        }
+        document.getElementById('ex4').innerHTML = 'Data: '+data+' '+' <br> El dia cau en cap de setmana? <br>'+datacapdesetmana(data);
+        // EXERCICI 5. (Opcional) Escriu una funció Javascript que ens digui quants dies han passat des de l'inici de l'any fins una data donada del mateix any.
+        function calculardies(data){
+            var dia=data.getDate();
+            var mes=data.getMonth()+1;
+            var diestotals=dia+mes*30;
+            return diestotals; 
+        }
+        var avui = new Date(Date.now());
+        document.getElementById('ex5').innerHTML = 'Dies entre 1 de 2023 i 18/10: '+calculardies(avui);
+        // EXERCICI 6. (Opcional) Programa una funció que torni l'edat d'una persona a partir de la seva data de naixement
+        function calcularcumple(data){
+            var avui=new Date(Date.now());
+            var cumple=new Date(data);
+            var anys= avui.getFullYear() -cumple.getFullYear();
+            if(cumple.getMonth()>=avui.getMonth()){
+                if(cumple.getDate()<=avui.getDate()){
+                    return anys-1;
+                }
+                else{
+                    return anys;
+                }    
+            }
+            else{
+                return anys;
+            }
+        }
+        datacumple= new Date(2003 ,9, 19);
+        document.getElementById('ex6').innerHTML='Edat de una persona nascuda el ' + datacumple.toLocaleString()+ ' és '+calcularcumple(datacumple); //
+    }
+</script>
+</html>

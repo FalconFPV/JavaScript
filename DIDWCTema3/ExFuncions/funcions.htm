@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcions Page</title>
+    <script src="../codiFont/js/utilitats.js"></script>
+</head>
+<!-- EXERCICI 1. Crea una pàgina funcions.html que inclogui utilitats.js i tengui un div per a cada exercici.  -->
+<!-- El codi html generat per cada exercici ha d'anar dins el div corresponent. -->
+<body>
+    <h2>Exercici 4</h2>
+    <div id="exercici4"></div>
+    <h2>Exercici 6</h2>
+    <div id="exercici6"></div>
+    <h2>Exercici 7</h2>
+    <div id="exercici7"></div>
+    <h2>Exercici 9</h2>
+    <div id="exercici9"></div>
+    <h2>Exercici 10</h2>
+    <div id="exercici10">
+        <form>
+            <button id="boto0">Botó 0</button>
+            <button id="boto1">Botó 1</button>
+            <button id="boto2">Botó 2</button>
+            <button id="boto3">Botó 3</button>
+            <button id="boto4">Botó 4</button>
+            <button id="boto5">Botó 5</button>
+            <button id="boto6">Botó 6</button>
+            <button id="boto7">Botó 7</button>
+            <button id="boto8">Botó 8</button>
+            <button id="boto9">Botó 9</button>
+        </form>
+    </div>
+    <h2>Exercici 11</h2>
+    <div id="exercici11">
+        <form>
+            <button id="0">Botó 0</button>
+            <button id="1">Botó 1</button>
+            <button id="2">Botó 2</button>
+            <button id="3">Botó 3</button>
+            <button id="4">Botó 4</button>
+            <button id="5">Botó 5</button>
+            <button id="6">Botó 6</button>
+            <button id="7">Botó 7</button>
+            <button id="8">Botó 8</button>
+            <button id="9">Botó 9</button>
+        </form>
+    </div>
+<script>
+    // Assigna a l'esdeveniment window.onload el codi necessari per provar la resta d'exercicis. Utilitza una funció anònima per fer-ho.
+    window.onload = function() {
+        document.getElementById('exercici4').innerHTML = 'El resultat de la suma és: '+calcula(1,2,suma);
+        document.getElementById('exercici6').innerHTML = '<button onclick="mostra()">Mostrar alert</button>';
+        document.getElementById('exercici7').innerHTML = '<button onclick="mostraDades(1234)">Mostrar dades</button>';
+        document.getElementById('exercici9').innerHTML = 'Script al carregar la pàgina que mostra suma de dos nombres '+grossa(1,2);
+        //EXERCICI 10
+
+        //Apartat 1
+        for (var i = 0; i < 10; i++) {
+				var boton = document.getElementById("boto" + i);
+				boton.onclick = function() {
+					alert(this.id);
+				};
+        }
+        //Apartat 2
+        // for (let i = 0; i < 10; i++) {
+		// 		let boton = document.getElementById("boto" + i);
+		// 		boton.onclick = function() {
+		// 			alert(this.id);
+		// 		};
+        // }
+
+        //EXERCICI 11
+        for (let i = 0; i < 10; i++) {
+            let boton = document.getElementById(i);
+            boton.onclick = () => alert(boton.id);
+        }
+    };
+</script>
+</body>
+</html>
