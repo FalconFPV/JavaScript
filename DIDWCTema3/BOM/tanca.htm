@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- EXERCICI 2. Crea una pàgina tanca.html amb un botó que la tanqui. Inclou un paràgraf amb id per exercicis posteriors. 
+Funciona el botó? Inclou en un paràgraf l’explicació. -->
+<body>
+    <input id="tanca" type="button" value="Tanca">
+    <p>El botó no tancarà la pàgina perque no la hem oberta des de JavaScript</p>
+</body>
+<script>
+    window.onload = function() {
+        document.getElementById("tanca").innerHTML= window.close;
+    }
+</script>
+</html>

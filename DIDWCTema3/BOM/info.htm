@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 1px solid black;
+            margin: auto;
+        }
+        th{
+            border: 1px solid black;
+        }
+        td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<!-- EXERCICI 1. Crea una pàgina info.html. Dins aquesta pàgina crea una secció per a cada objecte que hem vist del BOM 
+que ens mostri tres propietats. Per que quedi una mica “guapo” per a cada secció farem una taula amb tres 
+columnes: la primera tendrà el nom de la propietat, la segona el valor que torna i la tercera una breu explicació. -->
+<body>
+    <!-- Objecte Window -->
+    <h2>Objecte Window</h2>
+    <table>
+        <tr>
+            <th>Nom de la propietat</th>
+            <th>Valor que torna</th>
+            <th>Explicació</th>
+        </tr>
+        <tr>
+            <td>innerHeight</td>
+            <td id="windowheight"></td>
+            <td>Indica altura finestra</td>
+        </tr>
+        <tr>
+            <td>innerWidth</td>
+            <td id="innerWidth"></td>
+            <td>Indica amplada finestra</td>
+        </tr>
+        <tr>
+            <td>lenght</td>
+            <td id="lenght"></td>
+            <td>Torna el nombre de marcs de la finestra.</td>
+        </tr>
+    </table>
+    <!-- Objecte Navigator -->
+    <h2>Objecte Navigator</h2>
+    <table>
+        <tr>
+            <th>Nom de la propietat</th>
+            <th>Valor que torna</th>
+            <th>Explicació</th>
+        </tr>
+        <tr>
+            <td>cookieEnabled</td>
+            <td id="cookieEnabled"></td>
+            <td>Ens diu si les cookies estan habilitades o no</td>
+        </tr>
+        <tr>
+            <td>geolocation</td>
+            <td id="geolocation"></td>
+            <td>Torna un objecte geolocation que ens permetrà obtenir les <br>
+                coordenades de l’usuari. Demana permís a l’usuari.</td>
+        </tr>
+        <tr>
+            <td>userAgent</td>
+            <td id="userAgent"></td>
+            <td>Torna aquesta capçalera que el navegador envia al servidor</td>
+        </tr>
+    </table>
+    <!-- Objecte Screen -->
+    <h2>Objecte Screen</h2>
+    <table>
+        <tr>
+            <th>Nom de la propietat</th>
+            <th>Valor que torna</th>
+            <th>Explicació</th>
+        </tr>
+        <tr>
+            <td>availHeight</td>
+            <td id="availHeight"></td>
+            <td>L'alçada disponible de la pantalla</td>
+        </tr>
+        <tr>
+            <td>availWidth</td>
+            <td id="availWidth"></td>
+            <td>L'amplada disponible de la pantalla.</td>
+        </tr>
+        <tr>
+            <td>colorDepth</td>
+            <td id="colorDepth"></td>
+            <td>La profunditat de color en bits per a representar imatges.</td>
+        </tr>
+    </table>
+    <!-- Objecte History -->
+    <h2>Objecte History</h2>
+    <table>
+        <tr>
+            <th>Nom de la propietat</th>
+            <th>Valor que torna</th>
+            <th>Explicació</th>
+        </tr>
+        <tr>
+            <td>length</td>
+            <td id="length"></td>
+            <td>el nombre de URL's dins l'històric, incloent la pàgina actual</td>
+        </tr>
+    </table>
+    <!-- Objecte Location -->
+    <h2>Objecte Location</h2>
+    <table>
+        <tr>
+            <th>Nom de la propietat</th>
+            <th>Valor que torna</th>
+            <th>Explicació</th>
+        </tr>
+        <tr>
+            <td>hash</td>
+            <td id="hash"></td>
+            <td>Torna la porció de l'àncora de la URL, inclòs el #</td>
+        </tr>
+        <tr>
+            <td>host</td>
+            <td id="host"></td>
+            <td>Indica el domini i el port</td>
+        </tr>
+        <tr>
+            <td>href</td>
+            <td id="href"></td>
+            <td>Torna l'URL completa. Si es modifica el navegador carrega la nova URL.</td>
+        </tr>
+    </table>
+</body>
+<script>
+    window.onload = function() {
+        document.getElementById('windowheight').innerHTML = window.innerHeight;
+        document.getElementById('innerWidth').innerHTML = window.innerWidth;
+        document.getElementById('lenght').innerHTML = window.length;
+        document.getElementById('userAgent').innerHTML = navigator.userAgent;
+        document.getElementById('geolocation').innerHTML = navigator.geolocation;
+        document.getElementById('cookieEnabled').innerHTML = navigator.cookieEnabled;
+        document.getElementById('availHeight').innerHTML = screen.availHeight;
+        document.getElementById('availWidth').innerHTML = screen.availWidth;
+        document.getElementById('colorDepth').innerHTML = screen.colorDepth;
+        document.getElementById('length').innerHTML = history.length;
+        document.getElementById('hash').innerHTML = location.hash;
+        document.getElementById('host').innerHTML = location.host;
+        document.getElementById('href').innerHTML = location.href;
+    }
+</script>
+</html>

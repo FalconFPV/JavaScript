@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- EXERCICI 4. Crea una pàgina splash.html que mostri només una imatge, la que volgueu. 
+Al cap de 10 segons ha de canviar automàticament a la pàgina contingut.html. 
+Creau també aquesta pàgina, l'única condició és que sigui diferent de splash.html. -->
+<body>
+    <div>
+        <img src="moix.jpeg" alt="">
+    </div>
+</body>
+<script>
+    setTimeout(function() {
+        window.location.href = "contingut.htm";
+    }, 10000);
+</script>
+</html>

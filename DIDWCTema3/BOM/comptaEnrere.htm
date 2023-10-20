@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contador atrás</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<!-- EXERCICI 5. Crea una pàgina compteEnrere.html que mostri un compte enrere,
+per exemple de 10 segons. En acabar mostrarà un missatge que avisi a l'usuari que ha acabat,
+o anirà a la pàgina contingut.html automàticament -->
+<body>
+	<div>
+		<h2>Temps restant</h2>
+		<p id="contaenrrere">10</p>
+		<h2>Segons</h2>
+	</div>
+	<script>
+		var contaenrrere = 10;
+		var contaenrrereElement = document.getElementById("contaenrrere");
+		var contaenrrereInterval = setInterval(function() {
+			contaenrrere--;
+			contaenrrereElement.innerHTML = contaenrrere;
+			if (contaenrrere === 0) {
+				clearInterval(contaenrrereInterval);
+				window.location.href = "contingut.htm";
+			}
+		}, 1000);
+	</script>
+</body>
+</html>
