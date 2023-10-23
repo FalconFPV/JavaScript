@@ -7,20 +7,51 @@
 </head>
 <!-- Crea una pàgina window.html. Des d'aquesta pàgina obre una finestra emergent 
 amb la pàgina tanca.html i assigna-la a una variable. Perquè obri una finestra independent heu
-d’especificar qualque paràmetre, per exemple les dimensions de la finestra. Pot ser que el teu navegador la bloquegi.
-
-Inclou un botó que obri la finestra. Guarda la referència que torna open per els exercicis posteriors.
-
-Inclou un botó que canviï les dimensions d'aquesta finestra.
-
-Inclou un altre botó que la canviï de posició.
-
-Inclou un altre botó que en modifiqui el contingut del paràgraf de tanca.html que has creat amb identificador.. nom_finestra.document.getElementById....
-
-Inclou un altre botó que la tanqui.
-
-Aquests botons només han de funcionar si la finestra ha estat creada i encara està oberta. -->
+d’especificar qualque paràmetre, per exemple les dimensions de la finestra. Pot ser que el teu navegador la bloquegi. -->
 <body>
-    
+    <h1>Pàgina Window.html</h1>
+    <button id="obrirFinestra">Obre la finestra</button>
+    <button id="canviaDimensions">Canvia les dimensions</button>
+    <button id="canviaPosicio">Canvia la posició</button>
+    <button id="canviaContingut">Canvia el contingut de la finestra</button>
+    <button id="tancaFinestra">Tanca la finestra</button>
+
+    <script>
+        let finestraEmergent = null;
+
+        // Obrir la finestra
+        document.getElementById("obrirFinestra").addEventListener("click", function() {
+            finestraEmergent = window.open("tanca.htm", "NomDeLaFinestra", "width=400,height=300");
+        });
+
+        // Canviar les dimensions
+        document.getElementById("canviaDimensions").addEventListener("click", function() {
+            if (finestraEmergent && !finestraEmergent.closed) {
+                finestraEmergent.resizeTo(600, 400);
+            }
+        });
+
+        // Canviar la posició
+        document.getElementById("canviaPosicio").addEventListener("click", function() {
+            if (finestraEmergent && !finestraEmergent.closed) {
+                finestraEmergent.moveTo(200, 100);
+            }
+        });
+
+        // Canviar el contingut
+        document.getElementById("canviaContingut").addEventListener("click", function() {
+            if (finestraEmergent && !finestraEmergent.closed) {
+                finestraEmergent.document.getElementById("explicacio").textContent = "Contingut modificat des de Window.html";
+            }
+        });
+
+        // Tancar la finestra
+        document.getElementById("tancaFinestra").addEventListener("click", function() {
+            if (finestraEmergent && !finestraEmergent.closed) {
+                finestraEmergent.close();
+            }
+        });
+    </script>
 </body>
 </html>
+

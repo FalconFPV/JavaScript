@@ -8,12 +8,18 @@
 <!-- EXERCICI 2. Crea una pàgina tanca.html amb un botó que la tanqui. Inclou un paràgraf amb id per exercicis posteriors. 
 Funciona el botó? Inclou en un paràgraf l’explicació. -->
 <body>
-    <input id="tanca" type="button" value="Tanca">
-    <p>El botó no tancarà la pàgina perque no la hem oberta des de JavaScript</p>
-</body>
-<script>
-    window.onload = function() {
-        document.getElementById("tanca").onclick= window.close();
-    }
-</script>
+    <h1>Pàgina per tancar</h1>
+    <p>Aquesta és una pàgina amb un botó per tancar-la.</p>
+    <button id="tancarPagina">Tanca la pàgina</button>
+
+    <p id="explicacio"></p>
+
+    <script>
+        document.getElementById("tancarPagina").addEventListener("click", function() {
+            window.close();
+            document.getElementById("explicacio").textContent = "La finestra s'ha tancat.";
+        });
+    </script>
 </html>
+
+
