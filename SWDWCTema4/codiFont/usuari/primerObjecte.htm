@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXERCICI1</title>
+</head>
+<!-- EXERCICI 1. Crea un document anomenal primerObjecte.html i dins l'onload defineix dos objectes amb la
+informació referent a un alumne cada un. El primer crea’l de cop, en una sola línia. El segon crea’l
+buid i afegeix les propietats una a una. Utilitza un for ( in ) i un foreach per mostrar tota la
+informació de cada alumne dins la pàgina. -->
+<body>
+    <h2>Mostram Objecte 1</h2>
+    <p id="mostra1"></p>
+    <br>
+    <h2>Mostram Objecte 2</h2>
+    <p id="mostra2"></p>
+</body>
+<script>
+    window.onload= function() {
+        let jo={nom: "Jo", llinatges:"Mateix",mostraNom:function(){return this.nom+" "+this.llinatges;}}  
+        
+        let nom = {};
+        nom.nom = "nom";
+        nom.llinatges = "Mateix";
+        nom.mostraNom = function () {
+        return this.nom + " " + this.llinatges;
+        };
+        //Mostram amb for in
+        for ( var i in jo ){
+            document.getElementById('mostra1').innerHTML+= jo[i] + '<br>';
+        }
+        for ( var i in nom ){
+            document.getElementById('mostra2').innerHTML+= nom[i]+ '<br>';
+        }
+        //Mostram amb foreach
+        Object.entries(jo).forEach(([key, valor]) => {
+            document.getElementById('mostra1').innerHTML+= valor + '<br>';
+        });
+        Object.entries(nom).forEach(([key, valor]) => {
+            document.getElementById('mostra2').innerHTML+= valor + '<br>';
+        });
+    }
+</script>
+</html>

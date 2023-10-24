@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Inclou a la pàgina gps.html les coordenades de la teva posició, la longitud i la latitud. Utilitza la propietat geolocation de navigator 
+    per obtenir aquest objecte. Utilitza el mètode getcurrentPosition() de l’objecte geolocation per obtenir les dades. Aquest mètode espera u
+    na funció com a paràmetre. Dins el cos de la funció mostrau les coordenades dins la pàgina. Aquesta funció té un paràmetre on ens arribarà 
+    un objecte de tipus Position. A la seva vegada aquest objecte té la propietat coords que conté un objecte de tipus GeolocationCoordinates. 
+    Aquest objecte té una propietat per a la latitud i un altre per la longitud.
+
+    Nota: Si podeu posar aquesta pàgina a un servidor i accedir-hi des d’un dispositiu mòbil tendreu accés també a la velocitat i el rumb.
+
+    Nota 2: Si actualitzau la informació amb un interval veurem tendreu una petita aplicació de GPS -->
+<body>
+    <h1>GPS</h1>
+    <p id="gps"></p>
+</body>
+<script>
+    let interval;
+
+    function repetirCadaSegundo() {
+    interval = setInterval(localitzar, 1000);
+    }
+
+    function localitzar() {
+    // Obtenir les coordenades de la teva posició
+        navigator.geolocation.getCurrentPosition(function(position) {
+        // Obtenir la longitud i la latitud
+        var longitude = position.coords.longitude;
+        var latitude = position.coords.latitude;
+
+        // Afegir les coordenades a la pàgina
+        var gpsHtml = document.getElementById("gps");
+        gpsHtml.innerHTML = "Longitud: " + longitude + ", Latitud: " + latitude;
+    });
+    }
+
+
+</script>
+</html>
