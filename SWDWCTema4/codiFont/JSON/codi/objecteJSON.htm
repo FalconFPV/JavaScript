@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objecte JSON</title>
+</head>
+<body>
+    <h1>Informació de l'Alumne en Format JSON</h1>
+    <div id="infoAlumneJSON"></div>
+
+    <script src="../js/json.js"></script>
+    <script>
+        // Crida la funció per obtenir l'objecte en format JSON
+        const alumneJSON = obtenirObjecteJSON();
+
+        // Utilitza JSON.parse per convertir l'objecte JSON en un objecte JavaScript
+        const alumne = JSON.parse(alumneJSON);
+
+        // Obtén l'element HTML per mostrar la informació
+        document.getElementById('infoAlumneJSON').innerHTML= JSON.stringify(alumne);
+    </script>
+</body>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objecte Cotxe amb Funció JSON</title>
+</head>
+<!-- EXERCICI 5. Crea la pàgina objecteFuncionsJSON.html. Utilitza la notació JSON per crear un objecte de tipus cotxe, 
+amb la marca, el model i la matrícula, i una funció que torni tots aquests atributs concatenats. És possible? -->
+<body>
+    <h1>Objecte Cotxe amb Funció JSON</h1>
+    <div id="cotxeInfo"></div>
+
+    <script>
+        // Crea un objecte de tipus cotxe amb la marca, el model i la matrícula
+        const cotxe = {
+            marca: "Ford",
+            model: "Focus",
+            matricula: "ABC123",
+            //Funció que mostra la info del cotxe
+            obtenirInfo: function() {
+                return document.getElementById('cotxeInfo').innerHTML=JSON.stringify(cotxe);
+            }
+        };
+
+        // Mostra la informació de l'objecte utilitzant la funció
+        cotxeInfo.innerHTML += '<br>Informació obtinguda amb la funció:<br>' + cotxe.obtenirInfo();
+    </script>
+</body>
+</html>

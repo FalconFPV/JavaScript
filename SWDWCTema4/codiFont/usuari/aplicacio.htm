@@ -5,20 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicacio</title>
 </head>
-<!-- EXERCICI 3. Crea un document aplicacio.html, amb un script que:
-
-    Crei dos objectes aplicació, i mostri la informació dels objectes a la pàgina.
-
-    Modifiqui algun atribut.
-
-    Inclogui la informació actualitzada de l'objecte dins la pàgina.
-
-    Afegiu una funció que torni un missatge a pinyó al prototipus del constructor. 
-    Comprovau si aquesta funció s'afegeix als dos objectes ja creats o només als nous. -->
+<!-- EXERCICI 3.  -->
 <body>
-    
-</body>
-<script>
+    <h1>Informació de les Aplicacions</h1>
+    <div id="appInfo"></div>
 
-</script>
+    <script src="../usuari/js/aplicacio.js"></script>
+    <script>
+        window.onload = function () {
+            // Crear dues instàncies de l'objecte Aplicacio
+            var aplicacio1 = new Aplicacio("App1", "Joc", "Un joc divertit", 2.99, 1000);
+
+            var aplicacio2 = new Aplicacio("App2", "Productivitat", "Una aplicació de productivitat", 0.99, 5000);
+
+            // Mostrar la informació de les aplicacions a la pàgina
+            document.getElementById("appInfo").innerHTML += aplicacio1.toString() + "<br><br>" + aplicacio2.toString();
+
+            // Modificar un atribut d'una de les aplicacions
+            aplicacio1.preu = 1.99;
+
+            // Mostrar la informació actualitzada a la pàgina
+            document.getElementById("appInfo").innerHTML += "<br><br>Aplicació 1 actualitzada:<br>" + aplicacio1.toString();
+
+            // Afegir una funció al prototipus del constructor
+            Aplicacio.prototype.missatge = function () {
+                return "Aquesta és una nova versió de l'aplicació!";
+            };
+            //Comprovam miisatge
+            var novaapp = new Aplicacio("Novaapp", "Productivitat", "Una aplicació de productivitat", 0.99, 5000);
+            //Funciona en ambdos casos
+            document.getElementById("appInfo").innerHTML += "<br><br>"+novaapp.toString()+"<br>"+novaapp.missatge();
+            document.getElementById("appInfo").innerHTML += "<br><br>"+aplicacio2.toString()+"<br>"+aplicacio2.missatge();
+        };
+    </script>
+</body>
+
 </html>

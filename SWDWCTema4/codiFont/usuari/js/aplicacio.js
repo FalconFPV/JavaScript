@@ -2,18 +2,17 @@
 // una aplicació del google play, apple store o similars, amb un nom, un tipus, una descripció, un preu 
 // i la quantitat de descàrregues:
 
-// La funció constructor rebrà paràmetres per al nom, tipus, descripció i preu.
-
-// Crea una funció que torni una cadena amb tota la informació de l'objecte, vaja el toString()
-
-function aplicacio(nom, tipus, descripcio, preu){
+// Definició de la funció constructor
+// Funció constructora per a l'objecte d'aplicació
+function Aplicacio(nom, tipus, descripcio, preu, descarregues) {
     this.nom = nom;
     this.tipus = tipus;
     this.descripcio = descripcio;
     this.preu = preu;
+    this.descarregues = descarregues;
 }
 
-function aplicacioToString(aplicacio){
-    Text= aplicacio.toString();
-    return Text;
-}
+// Funció toString per obtenir una cadena amb tota la informació de l'objecte
+Aplicacio.prototype.toString = function() {
+    return "Nom: " + this.nom + "\nTipus: " + this.tipus + "\nDescripció: " + this.descripcio + "\nPreu: " + this.preu + "\nDescàrregues: " + this.descarregues;
+};

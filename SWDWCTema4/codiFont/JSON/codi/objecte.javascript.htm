@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- EXERCICI 2B. Crea la pàgina objecteJavascript.html. Mostra la informació de l'objecte retornat per la funció a la pàgina utilitzant la notació per punts. -->
+<body>
+    <h1>Informació del alumne</h1>
+    <p>Nom: <span id="nom"></span></p>
+    <p>Llinatges: <span id="llinatges"></span></p>
+    <p>Cicle: <span id="cicle"></span></p>
+    <p>Número de mòduls: <span id="numModuls"></span></p>
+  
+    <script src="../js/json.js"></script>
+    <script>
+      const alumne = crearAlumne();
+      const nom = document.getElementById("nom").innerHTML= alumne.nom;
+      const llinatges = document.getElementById("llinatges").innerHTML=alumne.llinatges;
+      const cicle = document.getElementById("cicle").innerHTML=alumne.cicle;
+      const numModuls = document.getElementById("numModuls").innerHTML=alumne.numModuls;
+    </script>
+  </body>
+</html>

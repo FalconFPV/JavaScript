@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova Classes Alumne i Modul</title>
+</head>
+<body>
+    <h1>Prova de Classes Alumne i Modul</h1>
+
+    <div id="moduls">
+        <h2>Mòduls</h2>
+        <ul id="modulList"></ul>
+    </div>
+
+    <div id="alumne">
+        <h2>Alumne</h2>
+        <p id="alumneInfo"></p>
+        <h3>Mòduls de l'Alumne</h3>
+        <ul id="alumneModuls"></ul>
+    </div>
+
+    <script type="module">
+        import { Modul, Alumne } from '../usuari/js/institut.js';
+
+        // Crear instàncies de mòduls
+        const modul1 = new Modul('Desenvolupament web', 'SWD', 'S2W');
+        const modul2 = new Modul('Des Multiplataforma', 'DAM', 'S2W');
+        const modul3 = new Modul('Xarxes i seguretat', 'ASICS', 'S2W');
+
+        // Crear instància d'alumne
+        const alumne1 = new Alumne('Joan', 'Company', 'S2W');
+
+        // Matricular l'alumne en mòduls
+        alumne1.afegirModul(modul1);
+        alumne1.afegirModul(modul2);
+        alumne1.afegirModul(modul3);
+
+        // Eliminar un mòdul de l'alumne
+        alumne1.esborrarModul(modul2);
+
+        // Mostrar la informació dels mòduls i de l'alumne a la pàgina
+        const modulList = document.getElementById('modulList');
+        [modul1, modul2, modul3].forEach(modul => {
+            const li = document.createElement('li');
+            li.textContent = `Nom: ${modul.nom}, Codi: ${modul.codi}, Curs: ${modul.curs}`;
+            modulList.appendChild(li);
+        });
+
+        const alumneInfo = document.getElementById('alumneInfo');
+        alumneInfo.textContent = alumne1.nomComplet;
+
+        const alumneModuls = document.getElementById('alumneModuls');
+        alumne1.moduls.forEach(modul => {
+            const li = document.createElement('li');
+            li.textContent = `Nom: ${modul.nom}, Codi: ${modul.codi}, Curs: ${modul.curs}`;
+            alumneModuls.appendChild(li);
+        });
+    </script>
+</body>
+</html>

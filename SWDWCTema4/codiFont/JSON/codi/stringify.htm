@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- EXERCICI 6B. Crea la pàgina stringify.html. Crea un objecte d'un dels tipus creats amb anterioritat, un array de sencers, 
+una matriu quadrada i un array d'objectes. Passa'ls a la funció anterior i mostra el resultat dins de la pàgina. -->
+<body>
+    <h1>Stringify Objects and Arrays</h1>
+    <div id="alumne"></div>
+    <div id="arraysencers"></div>
+    <div id="matriu"></div>
+    <div id="arrayobj"></div>
+
+    <script src="../js/json.js"></script>
+    <script>
+        // Crear un objecte d'un dels tipus creats amb anterioritat
+        const alumne = {
+            nom: "JOAN",
+            llinatges: "COMPANY",
+            cicle: "S2W",
+            modulsMatriculats: 3
+        };
+
+        // Crear un array de sencers
+        const sencers = [1, 2, 3, 4, 5];
+
+        // Crear una matriu quadrada
+        const matriuQuadrada = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+
+        // Crear un array d'objectes
+        const arrayObjectes = [
+            { marca: "Ford", model: "Mustang" },
+            { marca: "Toyota", model: "Supra" },
+            { marca: "Honda", model: "Civic" }
+        ];
+
+        // Mostra el JSON de cada objecte o array
+        document.getElementById('alumne').innerHTML = 'Objecte Alumne:<br>'+ obtenirJSON(alumne);
+        document.getElementById('arraysencers').innerHTML = 'Objecte Alumne:<br>'+ obtenirJSON(sencers);
+        document.getElementById('matriu').innerHTML = 'Objecte Alumne:<br>'+ obtenirJSON(matriuQuadrada);
+        document.getElementById('arrayobj').innerHTML = 'Objecte Alumne:<br>'+ obtenirJSON(arrayObjectes);
+    </script>
+</body>
+</html>
