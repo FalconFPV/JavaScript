@@ -10,8 +10,8 @@ function crearAlumne() {
 // A la pàgina l mostra aquesta informació utilitzant la notació per punts.
 function obtenirObjecteJSON() {
     const alumne = {
-        nom: "John",
-        llinatges: "Doe",
+        nom: "Joan",
+        llinatges: "Company",
         cicle: "S2W",
         modulsMatriculats: 3
     };

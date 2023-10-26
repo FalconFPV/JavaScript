@@ -18,27 +18,24 @@ informació de cada alumne dins la pàgina. -->
 </body>
 <script>
     window.onload= function() {
-        let jo={nom: "Jo", llinatges:"Mateix",mostraNom:function(){return this.nom+" "+this.llinatges;}}  
-        
-        let nom = {};
-        nom.nom = "nom";
-        nom.llinatges = "Mateix";
-        nom.mostraNom = function () {
-        return this.nom + " " + this.llinatges;
-        };
+        let jo={nom: "Joan",llinatges:"Company"}
+        let nom={
+            nom: "Alejandro",
+            llinatges:"Avila"
+        }
         //Mostram amb for in
         for ( var i in jo ){
-            document.getElementById('mostra1').innerHTML+= jo[i] + '<br>';
+            document.getElementById('mostra1').innerHTML+= jo[i] + ' ';
         }
         for ( var i in nom ){
-            document.getElementById('mostra2').innerHTML+= nom[i]+ '<br>';
+            document.getElementById('mostra2').innerHTML+= nom[i] + ' ';
         }
         //Mostram amb foreach
         Object.entries(jo).forEach(([key, valor]) => {
-            document.getElementById('mostra1').innerHTML+= valor + '<br>';
+            document.getElementById('mostra1').innerHTML+=' '+ valor + ' ';
         });
         Object.entries(nom).forEach(([key, valor]) => {
-            document.getElementById('mostra2').innerHTML+= valor + '<br>';
+            document.getElementById('mostra2').innerHTML+=' '+ valor + ' ';
         });
     }
 </script>

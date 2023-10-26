@@ -40,22 +40,20 @@
         alumne1.esborrarModul(modul2);
 
         // Mostrar la informació dels mòduls i de l'alumne a la pàgina
-        const modulList = document.getElementById('modulList');
         [modul1, modul2, modul3].forEach(modul => {
             const li = document.createElement('li');
             li.textContent = `Nom: ${modul.nom}, Codi: ${modul.codi}, Curs: ${modul.curs}`;
-            modulList.appendChild(li);
+            document.getElementById('modulList').appendChild(li);
         });
+        
+        document.getElementById('alumneInfo').textContent = alumne1.nomComplet;
 
-        const alumneInfo = document.getElementById('alumneInfo');
-        alumneInfo.textContent = alumne1.nomComplet;
-
-        const alumneModuls = document.getElementById('alumneModuls');
         alumne1.moduls.forEach(modul => {
             const li = document.createElement('li');
             li.textContent = `Nom: ${modul.nom}, Codi: ${modul.codi}, Curs: ${modul.curs}`;
-            alumneModuls.appendChild(li);
+            document.getElementById('alumneModuls').appendChild(li);
         });
+
     </script>
 </body>
 </html>
