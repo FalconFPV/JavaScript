@@ -19,7 +19,7 @@ amb la marca, el model i la matrícula, i una funció que torni tots aquests atr
             matricula: "ABC123",
             //Funció que mostra la info del cotxe
             obtenirInfo: function() {
-                return document.getElementById('cotxeInfo').innerHTML=JSON.stringify(cotxe);
+                return JSON.stringify(cotxe);
             }
         };
 

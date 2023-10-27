@@ -28,6 +28,11 @@
         const modul2 = new Modul('Des Multiplataforma', 'DAM', 'S2W');
         const modul3 = new Modul('Xarxes i seguretat', 'ASICS', 'S2W');
 
+        //Mostram el llistat de mòduls
+        document.getElementById('modulList').innerHTML += modul1.infomodul+"<br>";
+        document.getElementById('modulList').innerHTML += modul2.infomodul+"<br>";
+        document.getElementById('modulList').innerHTML += modul3.infomodul+"<br>";
+
         // Crear instància d'alumne
         const alumne1 = new Alumne('Joan', 'Company', 'S2W');
 
@@ -39,21 +44,13 @@
         // Eliminar un mòdul de l'alumne
         alumne1.esborrarModul(modul2);
 
-        // Mostrar la informació dels mòduls i de l'alumne a la pàgina
-        [modul1, modul2, modul3].forEach(modul => {
-            const li = document.createElement('li');
-            li.textContent = `Nom: ${modul.nom}, Codi: ${modul.codi}, Curs: ${modul.curs}`;
-            document.getElementById('modulList').appendChild(li);
-        });
-        
-        document.getElementById('alumneInfo').textContent = alumne1.nomComplet;
+        //Mostrar nom complet alumne
+        document.getElementById('alumneInfo').innerHTML = alumne1.nomComplet;
 
-        alumne1.moduls.forEach(modul => {
-            const li = document.createElement('li');
-            li.textContent = `Nom: ${modul.nom}, Codi: ${modul.codi}, Curs: ${modul.curs}`;
-            document.getElementById('alumneModuls').appendChild(li);
-        });
-
+        //Mostram els mòduls de l'alumne
+        for(const modul of alumne1.moduls){
+            document.getElementById('alumneModuls').innerHTML+=modul.infomodul+"<br>";
+        }
     </script>
 </body>
 </html>

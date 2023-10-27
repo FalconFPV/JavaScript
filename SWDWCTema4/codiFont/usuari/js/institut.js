@@ -5,6 +5,9 @@ class Modul {
       this.codi = codi;
       this.curs = curs;
     }
+    get infomodul() { 
+      return "Nom de modul: "+this.nom+" Codi: "+this.codi+" curs: "+this.curs;
+    }
   }
   
   // Classe per representar un alumne
