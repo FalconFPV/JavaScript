@@ -1,0 +1,31 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" type="image/ico" href="imatges/favicon.ico">
+        <title>While</title>
+    </head>
+    <body>
+        <h1>While</h1>
+        <script type="text/javascript">
+            let inici = parseInt(prompt("Inici: "));
+            console.log("inici=" + inici);
+            let fi = parseInt(prompt("Fi: "));
+            console.log("fi=" + fi );
+            if (inici > fi) {
+                var aux = inici;
+                inici = fi;
+                fi = aux;
+            }
+            var index = inici;
+            do {
+                console.log(index );
+                index++;
+            } while (index <= fi);
+        </script>
+        <p>
+            <a href="indexBack.html">Tornar</a>
+        </p>
+    </body>
+</html>

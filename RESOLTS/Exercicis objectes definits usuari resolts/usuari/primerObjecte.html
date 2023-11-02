@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="ca">
+<head>
+    <title>Primer objecte</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+    <script type="text/javascript">
+        'use strict';
+        window.onload = function () {
+            let alumne1 = {nom: "Joan", llinatges: "Morro Vallespir", cicle: "GSDAW", grup: "S1W"};
+            let alumne2 = {};
+            alumne2.nom = "Pere";
+            alumne2['llinatges'] = "Cabot Nadal";
+            alumne2.cicle = "GSDAM";
+            alumne2.grup = "S2P";
+
+
+            for (let atribut in alumne1) {
+                document.getElementById("infoAlumne1").innerHTML += "<p><strong>" + atribut + ": </strong>" + alumne1[atribut] + "</p>";
+            }
+
+
+            Object.entries(alumne2).forEach((entry) => document.getElementById("infoAlumne2").innerHTML += "<p><strong>" + entry[0] + ": </strong>" + entry[1] + "</p>"
+            );
+
+        };
+    </script>
+
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>Exercicis UT 4</h2>
+        </div>
+    </div>
+    <div>
+        <h1>Primer objecte</h1>
+        <div id="infoAlumne1">
+            <h2>Primer alumne</h2>
+            <p><code>var alumne1 = {nom: "Joan", llinatges: "Morro Vallespir", cicle: "GSDAW", grup: "S1W"};</code></p>
+        </div>
+        <div id="infoAlumne2">
+            <h2>Segon alumne</h2>
+            <code> var alumne2 = {};<br>
+                alumne2.nom = "Pere";<br>
+                alumne2.llinatges = "Cabot Nadal";<br>
+                alumne2.cicle = "GSDAM";<br>
+                alumne2.grup = "S2P"; </code>
+        </div>
+        <p><a href="index.html">Torna a l'índex</a></p>
+    </div>
+</div>
+</body>
+</html>

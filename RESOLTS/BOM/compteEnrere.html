@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../imatges/favicon.ico">
+    <title>Compte enrere</title>
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+
+    <script type="text/javascript">
+        'use strict';
+
+        window.onload = function () {
+            let interval = 10;
+            let timer;
+
+            function resta() {
+                interval--;
+                document.getElementById("temps").innerHTML = interval;
+                if (interval == 0) {
+                    clearInterval(timer);
+                    location.assign("contingut.html");
+                }
+            }
+
+            timer = setInterval(resta, 1000);
+        };
+    </script>
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>&nbsp;</h2>
+        </div>
+    </div>
+    <div>
+        <h1>Compte enrere</h1>
+
+        <h2 id="temps">10</h2>
+
+        <p><a href="index.html">Torna a l'índex</a>.</p>
+    </div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+
+    <title>String</title>
+
+    <script type="text/javascript">
+        'use strict';
+        window.onload = function () {
+            var vLlista = document.getElementById("llista");
+            vLlista.innerHTML = "<li>" + "Google".link("http://www.google.cat") + "</li>";
+            vLlista.innerHTML += "<li>" + "CIFP Pau Casesnoves".link("https://www.paucasesnovescifp.cat") + "</li>";
+            vLlista.innerHTML += "<li>" + "Aula Virtual".link("https://aulavirtual.paucasesnovescifp.cat") + "</li>";
+            vLlista.innerHTML += "<li>" + "Anar al final".link("#final") + "</li>";
+        };
+    </script>
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>&nbsp;</h2>
+        </div>
+    </div>
+    <div>
+        <script type="text/javascript">
+            document.write("<h1>" + "String".anchor("inici") + "</h1>");
+        </script>
+        <h2>Enllaços creats amb el wrapper</h2>
+        <ul id="llista"></ul>
+        <script type="text/javascript">
+            for (var i = 0; i < 30; i++) {
+                document.write("<p>Text per fer lloc</p>");
+            }
+            document.write("<h2>" + "Final".anchor("final") + "</h2>");
+            document.write("<p>" + "Tornar a dalt".link("#inici") + "</p>");
+
+        </script>
+        <p><a href="index.html#string">Tornar a l'index</a>.</p>
+    </div>
+</div>
+</body>
+</html>

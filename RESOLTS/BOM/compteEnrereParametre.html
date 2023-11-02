@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../imatges/favicon.ico">
+    <title>Compte enrere</title>
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+    <script type="text/javascript">
+        'use strict';
+
+        window.onload = function () {
+            let timer;
+            let interval = 10;
+
+            /*
+                        let cerca = location.search;
+                        if (cerca.length > 0) {
+                            //elimina el ?
+                            cerca = cerca.substring(1, cerca.length);
+                            //dins params tenim un array on cada posició és de la forma parametre=valor
+                            let params = cerca.split("&");
+                            for (let index = 0; index < params.length; index++) {
+                                //parts[0]=nom parts[1]=valor
+                                let parts = params[index].split("=");
+                                //Si és correcte
+                                if (parts.length == 2) {
+                                    if ((parts[0] == "durada") && (parts[1].length > 0)
+                                        && (!isNaN(parts[1]))) {
+                                        //modificam interval amb el valor rebut
+                                        interval = parseInt(parts[1]);
+                                    }
+                                }
+                            }
+                        }
+            */
+
+            const params = new URLSearchParams(window.location.search);
+            if (params.has("durada")) {
+                interval = parseFloat(params.get("durada"));
+                if(!Number.isInteger(interval)){
+                    interval=10;
+                }
+            }
+
+            document.getElementById("temps").innerHTML = interval;
+            document.getElementById("mostraInterval").innerHTML = "Interval: " + interval;
+
+            timer = setInterval(()=>{
+                interval--;
+                document.getElementById("temps").innerHTML = interval;
+                if (interval == 0) {
+                    clearInterval(timer);
+                }
+            }, 1000);
+        };
+    </script>
+
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>&nbsp;</h2>
+        </div>
+    </div>
+    <div>
+
+        <h1>Compte enrere amb paràmetres</h1>
+
+        <h2 id="temps">
+
+        </h2>
+        <p id="mostraInterval"></p>
+        <p><a href="index.html">Torna a l'índex</a>.</p>
+
+    </div>
+</div>
+</body>
+</html>
+

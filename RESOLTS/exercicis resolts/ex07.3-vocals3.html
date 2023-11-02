@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Vocals amb un switch</title>
+        <link rel="icon" type="image/ico" href="imatges/favicon.ico">
+    </head>
+    <body>
+        <h1>Vocals amb un switch</h1>
+        <script type="text/javascript">
+            "use strict";
+
+            for (let index = 65; index <= 90; index++) {
+                const lletra = String.fromCharCode(index);
+                let tipus;
+                switch(lletra){
+                    case 'A':
+                    case 'E':
+                    case 'I':
+                    case 'O':
+                    case 'U':{
+                        tipus=" Vocal";
+                        break;
+                    }
+                    default:{
+                        tipus=" Consonant";
+                        break;
+                    }
+                }
+                console.log(lletra + ' '+tipus);
+            }
+        </script>
+        <p>
+            <a href="indexBack.html">Tornar</a>
+        </p>
+    </body>
+</html>

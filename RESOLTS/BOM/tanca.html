@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../imatges/favicon.ico">
+    <title>Tanca</title>
+    <script type="text/javascript">
+        'use strict';
+        window.onload = function () {
+            document.getElementById("boto").onclick = function () {
+                window.close();
+            };
+        };
+    </script>
+</head>
+<body>
+<h1>Tanca</h1>
+<p id="paragraf"></p>
+<button id="boto">Tanca</button>
+<p>El botó només podrà tancar la finestra quan la finestra s'hagi obert des de Javascript.</p>
+<p> Si obrim la pàgina directament des del navegador no ho podrà fer.</p>
+</body>
+</html>

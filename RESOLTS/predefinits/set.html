@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../imatges/favicon.ico">
+    <title>Conjunts</title>
+
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+    <script>
+        'use strict';
+
+        function printArray(valors) {
+            let cadena = "[";
+            for (let valor of valors) {
+                cadena += valor + ", ";
+            }
+
+            return cadena.substr(0, cadena.length - 2) + "]";
+        }
+
+        window.onload = () => {
+            const conjunt = new Set();
+            conjunt.add(1);
+            conjunt.add("a");
+            conjunt.add(true);
+            conjunt.add(1);
+            document.getElementById("mostrador").innerText = printArray(conjunt.values());
+            let original = [1, 1, 2, 2, 3, 4, 5, 5, 4, 3];
+            document.getElementById("original").innerText = printArray(original);
+            const conjunt2 = new Set(original);
+            // let senseDuplicats=[];
+            // for(let valor of conjunt2.values()){
+            //     senseDuplicats.push(valor);
+            // }
+            let senseDuplicats = Array.from(conjunt2);
+            document.getElementById("noDuplicats").innerText = printArray(senseDuplicats);
+
+        };
+    </script>
+
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>&nbsp;</h2>
+        </div>
+    </div>
+    <div>
+        <h1>Conjunts</h1>
+        <h2>Conjunt creat al javascript</h2>
+        <p id="mostrador"></p>
+        <h2>Eliminar duplicats amb un conjunt</h2>
+        <p id="original"></p>
+        <p id="noDuplicats"></p>
+        <p></p>
+        <p><a href="index.html#conjunts">Tornar a l'index</a>.</p>
+    </div>
+</div>
+</body>
+</html>

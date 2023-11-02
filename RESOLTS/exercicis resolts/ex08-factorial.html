@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Simpàtic</title>
+    <link rel="icon" type="image/ico" href="imatges/favicon.ico">
+    <script type="text/javascript">
+        "use strict";
+        function factorial(numero) {
+            let producte = 1;
+            for (let index = 2; index <= numero; index++) {
+                producte *= index;
+            }
+            return producte;
+        }
+
+        function factorialRec(numero) {
+            if (numero <= 2) {
+                return numero;
+            } else {
+                return numero * factorialRec(numero - 1);
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>Factorial</h1>
+<script type="text/javascript">
+    "use strict";
+
+    const num = parseInt(prompt("Factorial de: "));
+    console.log("El factorial de " + num + " és " + factorial(num));
+    console.log("El factorial calculat recursivament de " + num + " és " + factorialRec(num));
+</script>
+<p>
+    <a href="indexBack.html">Tornar</a>
+</p>
+</body>
+</html>

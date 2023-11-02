@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Més arrays</title>
+    <script src="js/funcionsArrays.js"></script>
+    <script>
+        window.onload = function () {
+            const array = [1, 2, 3, 4, 5, 6, 5, 4, 4, 3, 7, 8, 9, 10];
+            document.getElementById("original").innerText = JSON.stringify(array);
+            const copiat = copiaArray(array);
+            document.getElementById("copia").innerText = JSON.stringify(copiat);
+            document.getElementById("moda").innerText = moda(array);
+            const frase="Això era i no era";
+            document.getElementById("frase").innerText=frase;
+            document.getElementById("camelCase").innerText=camelCase(frase);
+            document.getElementById("original2").innerText = JSON.stringify(array);
+            eliminaDuplicats(array);
+            document.getElementById("duplicats").innerText = JSON.stringify(array);
+            const array2 = [1, 2, 3, 4, 5, 6, 5, 4, 4, 3, 7, 8, 9, 10];
+            const noDuplicats=eliminaDuplicats2(array2);
+            document.getElementById("duplicats2").innerText = JSON.stringify(noDuplicats);
+        }
+    </script>
+</head>
+<body>
+<h1>Més arrays</h1>
+<p><strong>Array original</strong></p>
+<p id="original"></p>
+<p><strong>Còpia</strong></p>
+<p id="copia"></p>
+<p><strong>Moda</strong></p>
+<p id="moda"></p>
+<p><strong>camelCase</strong></p>
+<p id="frase"></p>
+<p id="camelCase"></p>
+<p><strong>Array original</strong></p>
+<p id="original2"></p>
+<p><strong>Sense duplicats</strong></p>
+<p id="duplicats"></p>
+<p><strong>Sense duplicats versió 2</strong></p>
+<p id="duplicats2"></p>
+<p><a href="index.html">Tornar a l'index</a>.</p>
+</body>
+</html>

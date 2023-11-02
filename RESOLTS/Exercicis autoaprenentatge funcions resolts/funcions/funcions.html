@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="../imatges/favicon.ico">
+    <title>Funcions</title>
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+    <script type="text/javascript" src="../js/utilitats.js"></script>
+    <script type="text/javascript">
+        'use strict';
+
+        function grossa(a, b) {
+            let cadena = 'Resultat: ';
+
+            function petita(valor) {
+                alert(cadena + valor);
+            }
+
+            petita(a + b);
+        }
+
+        function calcula(a, b, operacio) {
+            alert("Operació paràmetre: " + operacio.name);
+            return operacio(a, b);
+        }
+
+        function mostra() {
+            alert("Hola!");
+        }
+
+        function mostraDades(dada) {
+            alert("Dades: " + dada);
+        }
+
+        function info(a, b, c, d) {
+            document.getElementById("Exercici5").innerHTML += "<h3>Arguments</h3>"
+            document.getElementById("Exercici5").innerHTML += "<p><bold>Longitud: </bold>" + arguments.length + "</p>";
+            let s = "";
+            for (let i = 0; i < arguments.length; i++) {
+                s = s + arguments[i] + " ";
+            }
+            document.getElementById("Exercici5").innerHTML += "<p><bold>Valors rebuts: </bold>" + s + "</p>";
+            // document.getElementById("Exercici5").innerHTML += "<p><bold>Callee: </bold>" + arguments.callee + "</p>";
+            // document.getElementById("Exercici5").innerHTML += "<p><bold>Callee.caller: </bold>" + arguments.callee.caller + "</p>";
+            document.getElementById("Exercici5").innerHTML += "<h3>Funció</h3>";
+            document.getElementById("Exercici5").innerHTML += "<p><bold>Nom: </bold>" + info.name + "</p>";
+            document.getElementById("Exercici5").innerHTML += "<p><bold>Paràmetres esperats: </bold>" + info.length + "</p>";
+        }
+
+        window.onload = function () {
+            //Exercici 2
+            const operacio = suma;
+            const numero1 = llegirSencer("Primer sumand:");
+            const numero2 = llegirSencer("Segon sumand:");
+            const codi = "<p>Primer sumand: " + numero1 + "</p>" + "<p>Segon sumand: " + numero2 + "</p>" + "<p>Suma: " + operacio(numero1, numero2) + "</p>";
+            document.getElementById("Exercici2").innerHTML = codi;
+
+            //Exercici 3
+            const restaAnonima = function (a, b) {
+                return a - b;
+            };
+
+            document.getElementById("Exercici3").innerHTML = "<p>Resta anònima: " + restaAnonima(numero1, numero2) + "</p>";
+
+            //Exercici 4
+            document.getElementById("Exercici4").innerHTML = "<p>Calcula: " + calcula(numero1, numero2, resta)
+                + "</p>";
+
+            // //Exercici 5
+            // grossa(numero1, numero2);
+            //Exercici 5
+            info(3, 4, 5, 6, 7, 8, 9);
+
+            //Exercici 6
+            document.getElementById("boto").onclick = mostra;
+            //Exercici 7
+            document.getElementById("botoPar").onclick = function () {
+                mostraDades(25);
+            }
+
+            //Exercici 8
+            document.getElementById("Exercici8").innerHTML += "<p> Valors: 1, 2, 3, 4, 5, 6, 7, 8, 9</p>";
+            document.getElementById("Exercici8").innerHTML += "<p> Suma: " + sumaRest(1, 2, 3, 4, 5, 6, 7, 8, 9) + "</p>";
+
+            //Exercici 9
+            grossa(2, 3);
+
+            //Exercici 10
+            for (let index = 1; index <= 10; index++) {
+                document.getElementById("Exercici91").innerHTML += '<button type="button" id="botoVar' + index + '">Botó var ' + index + '</button> &nbsp;&nbsp;&nbsp;';
+                document.getElementById("Exercici92").innerHTML += '<button type="button" id="botoLet' + index + '">Botó let ' + index + '</button> &nbsp;&nbsp;&nbsp;';
+
+            }
+            for (var i = 1; i <= 10; i++) {
+                document.getElementById("botoVar" + i).onclick = function () {
+                    alert(i);
+                }
+            }
+            for (let i = 1; i <= 10; i++) {
+                document.getElementById("botoLet" + i).onclick = function () {
+                    alert(i);
+                }
+            }
+            //Exercici 11
+            for (let i = 1; i <= 10; i++) {
+                document.getElementById("Exercici11").innerHTML += '<button type="button" id="boto_' + i + '">Botó arrow ' + i + '</button> &nbsp;&nbsp;&nbsp;';
+
+            }
+            for (let i = 1; i <= 10; i++) {
+                document.getElementById("boto_" + i).onclick = () => {
+                    alert(i);
+                }
+            }
+
+        };
+    </script>
+
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>Exercicis</h2>
+        </div>
+    </div>
+    <div>
+        <h1>Nom</h1>
+        <h2>Utilitzar una variable per cridar una funció</h2>
+        <div id="Exercici2"></div>
+        <h2>Funció anònima</h2>
+        <div id="Exercici3"></div>
+        <h2>Funció com a paràmetre</h2>
+        <div id="Exercici4"></div>
+
+        <!--<h2>Funció interna</h2>-->
+        <!--<div id="Exercici5"></div>-->
+
+        <h2>Informació de la funció</h2>
+        <div id="Exercici5"></div>
+
+        <h2>onclick</h2>
+        <div>
+            <p>
+                <button type="button" id="boto">Botó simpàtic</button>
+            </p>
+        </div>
+        <h2>onclick amb paràmetres</h2>
+        <div>
+            <p>
+                <button type="button" id="botoPar">Botó</button>
+            </p>
+        </div>
+        <h2>Paràmetres Rest</h2>
+        <div id="Exercici8"></div>
+
+        <h2>Botons</h2>
+        <div id="Exercici9">
+            <p>Amb <em>
+                <strong>var</strong>
+            </em> la variable que utílitzam com a índex del for té com a àmbit de referència la funció, en aquest cas el
+                window.onload. Per tant, és la mateixa variable per a tots els botons i tots mostren el mateix valor.
+            </p>
+            <p id="Exercici91"></p>
+            <p>Amb <em>
+                <strong>let</strong>
+            </em> la variable que utílitzam com a índex del for té com a àmbit de referència el bloc del for. És com si
+                a cada
+                iteració del for tenguéssim una variable diferent. Per tant, cada botó té la seva "pròpia variable" i
+                mostra el
+                valor adeqüat.
+            </p>
+            <p id="Exercici92"></p>
+        </div>
+
+        <h2>Botons Arrows</h2>
+        <div id="Exercici11"></div>
+        <p><a href="index.html">Tornar a l'índex</a></p>
+    </div>
+</div>
+</body>
+</html>

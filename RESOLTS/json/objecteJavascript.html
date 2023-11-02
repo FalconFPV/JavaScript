@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+1. Crea la pàgina objecteJSON.html. Crea un objecte amb les dades d'una
+persona (nom, llinatges, ....) utilitzant la notació JSON. Mostra la informació
+d'aquesta persona a la pàgina utilitzant la notació per punts.
+-->
+<html lang="ca">
+<head>
+    <title>Objecte creat en Javascript</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/json.js"></script>
+    <script type="text/javascript">
+        'use strict';
+        window.onload = function () {
+            let persona = creaObjecteJavascript();
+            let sCos = "<p><strong>Nom: </strong>" + persona.nom + "</p>";
+            sCos += "<p><strong>Llinatges: </strong>" + persona.llinatges + "</p>";
+            sCos += "<p><strong>Cicle: </strong>" + persona.cicle + "</p>";
+            sCos += "<p><strong>Nombre mòduls: </strong>" + persona.moduls + "</p>";
+            document.getElementById("cos").innerHTML = sCos;
+        };
+    </script>
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img alt="Logo del CIFP Pau Casesnoves" src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>Exercicis UT 4</h2>
+        </div>
+    </div>
+    <div>
+        <h1>Objecte creat en Javascript</h1>
+        <div id="cos">
+
+        </div>
+        <p><a href="index.html">Torna a l'índex</a></p>
+    </div>
+</div>
+</body>
+</html>

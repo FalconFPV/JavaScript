@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <title>Objecte JSON amb una funció</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        'use strict';
+        window.onload = function () {
+            const cotxe = JSON.parse('{"marca":"ford", "model":"fiesta", "matricula":"1234BCD", "mostraInfo":"function(){return this.marca}"}');
+            document.getElementById("contingut").innerHTML = "<p>" + cotxe.mostraInfo() + "</p>";
+        };
+    </script>
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img alt="Logo del CIFP Pau Casesnoves" src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>Exercicis UT 4</h2>
+        </div>
+    </div>
+    <div>
+
+        <h1>Objecte JSON amb una funció</h1>
+        <div id="contingut"></div>
+        <p>No es pot. JSON està pensat per intercanviar dades, no permet definir funcions.</p>
+        <p><a href="index.html">Torna a l'índex</a></p>
+    </div>
+</div>
+</body>
+</html>

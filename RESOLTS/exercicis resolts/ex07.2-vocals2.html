@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Vocals amb un if per a cada vocal</title>
+<link rel="icon" type="image/ico" href="imatges/favicon.ico">
+</head>
+<body>
+    <h1>Vocals amb un if per a cada una</h1>
+    <script type="text/javascript">
+        "use strict";
+        for ( let index = 65; index <= 90; index++) {
+            const lletra = String.fromCharCode(index);
+            let tipus;
+            if (lletra === 'A' || lletra === 'E' || lletra === 'I' || lletra === 'O' || lletra === 'U') {
+                tipus=" Vocal";
+            } else {
+                tipus=" Consonant";
+            }
+            console.log(lletra + " "+ tipus);
+        }
+    </script>
+    <p>
+        <a href="indexBack.html">Tornar</a>
+    </p>
+</body>
+</html>

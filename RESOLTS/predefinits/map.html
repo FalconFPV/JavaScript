@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <link rel="icon" href="../imatges/favicon.ico">
+    <meta charset="UTF-8">
+    <title>Mapes</title>
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+    <script>
+        'use strict';
+        window.onload = function () {
+            let map = new Map();
+            map.set(10, "Messi");
+            map.set(4, "Ramos");
+            map.set(46, "Rossi");
+            map.set(99, "Lorenzo");
+            map.set(10, "Rossi");
+
+
+            for (let [clau, valor] of map.entries()) {
+                document.getElementById("contingut").innerHTML += clau + "->" + valor + ", ";
+            }
+            document.getElementById("contingut").innerHTML += '<br>';
+            for (let clau of map.entries()) {
+                document.getElementById("contingut").innerHTML += clau[0] + "->" + clau[1] + ", ";
+            }
+
+            for (let clau of map.keys()) {
+                document.getElementById("claus").innerHTML += clau+ ", ";
+            }
+            document.getElementById("contingut").innerHTML += '<br>';
+            for (let valor of map.values()) {
+                document.getElementById("valors").innerHTML += valor + ", ";
+            }
+            document.getElementById("contingut").innerHTML += '<br>';
+
+            document.getElementById("recupera").innerHTML += 10 + "->" + map.get(10);
+        };
+    </script>
+
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>&nbsp;</h2>
+        </div>
+    </div>
+    <div>
+        <h1>Mapes</h1>
+        <h2>Contingut del mapa</h2>
+        <p id="contingut"></p>
+        <h2>Claus del mapa</h2>
+        <p id="claus"></p>
+        <h2>Valors del mapa</h2>
+        <p id="valors"></p>
+        <h2>Recupera valor</h2>
+        <p id="recupera"></p>
+        <p><a href="index.html#mapes">Tornar a l'index</a>.</p>
+    </div>
+</div>
+</body>
+</html>

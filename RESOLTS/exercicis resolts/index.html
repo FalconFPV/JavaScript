@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <link rel="icon" type="image/ico" href="imatges/favicon.ico">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Tema 2. Javascript: Sintaxi.</title>
+</head>
+<body>
+<h1>Desenvolupament web al costat del client.</h1>
+<h2>Tema 2. Javascript: Sintaxi.</h2>
+
+<h1>Exercicis</h1>
+<ol>
+    <li>
+        <p>Calcula la longitud d'una
+            circumferència. Demana el radi amb un prompt i escriu el radi i la
+            longitud a la consola.</p>
+        <p><a href="ex01-radi.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>Donats dos sencers <i>a</i> i <i>b</i>,
+            mostra quin és el major de dos sencers, per exemple <i>El major és
+                a</i>.</p>
+        <p><a href="ex02-major2.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>Donats tres números, <i>a</i>, <i>b</i> i <i>c</i>
+            ordenar-los de forma que al final <i>a&lt;=b&lt;=c</i>.</p>
+        <p><a href="ex03-ordenar3.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>Defineix dues variables, anomenades <i>inici</i> i <i>fi</i>,
+            i assignau-lis valors. Mostra a la pàgina tots els sencers entre
+            <i>inici</i> i <i>fi</i> (inclosos) de forma ascendent, utilitzant
+            un <i>while</i>. Ha de funcionar tant si inici &gt;= fi com si fi
+            &lt;=inici.
+        </p>
+        <p><a href="ex04-while.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>* Repeteix l'exercici anterior utilitzant un <i>for.</i></p>
+        <p><a href="ex05-for.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>* Repeteix l'exercici amb un <i>do{}while()</i>.</p>
+        <p><a href="ex06-doWhile.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>Crea un script que mostri les lletres de l'alfabet i al
+            costat indiqui si es tracta d'una vocal o d'una consonant.
+            String.fromCharCode(index) torna el caràcter corresponent al codi
+            ASCII <i>index</i>. En farem tres versions:</p>
+        <ol>
+            <li>
+                <p>Amb un <i>if</i> per a cada vocal <i>if() else if....</i></p>
+                <p><a href="ex07.1-vocals1.html">Ves-hi</a></p>
+            </li>
+            <li>
+                <p>Amb un sol <i>if() else</i></p>
+                <p><a href="ex07.2-vocals2.html">Ves-hi</a></p>
+            </li>
+            <li>
+                <p>Amb un <i>switch</i>. Recorda de posar <i>break</i></p>
+                <p><a href="ex07.1-vocals1.html">Ves-hi</a></p>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <p>Escriviu dues funcions que calculin el factorial d'un numero,
+            una recursiva i una iterativa. Demanau el número utilitzant un
+            prompt i mostrau el seu factorial a la pàgina.
+        </p>
+        <p><a href="ex08-factorial.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>Crea una carpeta js i un
+            fitxer <i>utilitats.js</i> dins ella que inclogui funcions per a la
+            suma, resta, multiplicació i divisió de dos números i la potència
+            d'una base elevada a un exponent. Totes les funcions han de tornar
+            el resultat (return), no han de mostrar res. Crea una pàgina
+            provaC<i>alculadora.html</i> que inclogui aquest fitxer extern i
+            cridi les seves funcions sense interacció amb l'usuari.</p>
+        <p><a href="ex09-calculadora.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>A <i>utilitats.js</i> inclou dues funcions, una per validar
+            si el paràmetre que rep és un número enter i una altra per
+            validar si el paràmetre és un nombre amb decimals. <b>Validar vol
+                dir que tornen true o false, no que mostrin cap missatge</b>. Crea
+            <i>validacions.html</i> per a comprovar que funcionen correctament.
+        </p>
+        <p><a href="ex10-validacions.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>* A <i>utilitats.js</i> afegeix una funció per llegir valors
+            numèrics enters. La funció demanarà el nombre a l'usuari amb un
+            prompt, comprovarà que el que ha escrit l'usuari és un enter i si
+            no ho és en demanarà un altre. No acabarà fins que l'usuari entri
+            un enter. Modifica <i>calculadora.html</i> de forma que ara demani
+            a l'usuari dos números enters i realitzi totes les operacions amb
+            aquests dos números.
+        </p>
+        <p><a href="ex09-calculadora.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>* Escriu una pàgina HTML, <i>taulaMultiplicar.html</i>, que
+            mostri la taula de multiplicar d'un número en forma de taula.
+            Utilitzau la funció de l'exercici anterior si l'has fet per a
+            demanar el número a l'usuari.</p>
+        <p><a href="ex12-taulaMultiplicar.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>Afegeix a <i>utilitats.js</i> una funció <i>validarTelefon</i>
+            que validi un número de telèfon mòbil. Tots sabem que un número
+            de telèfon mòbil només inclou dígits, en té 9, i el primer ha
+            de ser un 6 o, ara també, un 7. Afegeix una comprovació de telèfon
+            mòbil a <i>validacions.html.</i></p>
+        <p><a href="ex10-validacions.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>*Afegeix a <i>validarTelefon</i> un paràmetre que indiqui si
+            es tracta d'un mòbil o un fixe i ho validi correctament. Els fixes
+            comencen per 8 o per 9. Afegeix una comprovació de telèfon mòbil
+            i fixe a <i>validacions.html.</i></p>
+        <p><a href="ex10-validacions.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>Afegeix a <i>utilitats.js</i> una funció <i>validarData</i>
+            que validi si el que rep com a paràmetre és una data en el nostre
+            format dd/mm/aaaa. No cal que mireu si el mes té 30 o 31 dies o si
+            l'any és de traspàs. Per exemple, 3/8/2012 és correcta, per
+            15/15/2022 no. Afegeix una comprovació de data a <i>validacions.html.
+            </i><i>Opcional</i>:Comprova correctament el dia del mes.</p>
+        <p><a href="ex10-validacions.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p><a name="line1"></a>Afegeix
+            a <i>utilitats.js</i> una
+            funció <i>validarNif</i>.
+            Ha de comprovar que l'argument que li passam és un nif vàlid de 8
+            xifres i una lletra. La lletra ha de ser la correcta. S'obté
+            cercant el reste del NIF entre 23. Aquest reste és l'index de la
+            cadena 'TRWAGMYFPDXBNJZSQVHLCKET' Si el resta dona 3, la
+            lletra serà A.</p>
+        <p>Afegeix a <i>validacions.html</i>
+            una validació d'un nif.</p>
+        <p><a href="ex10-validacions.html">Ves-hi</a></p>
+    </li>
+    <li>
+        <p>Afegeix a <i>utilitats.js</i> una funció <i>validarObligatori</i>.
+            Ha de comprovar que l'argument que li passam conté un valor, no és
+            buid (null, cadena buida o cadena de blancs).</p>
+        <p><a href="ex10-validacions.html">Ves-hi</a></p>
+    </li>
+</ol>
+<p><a href="/menu.html">Torna a l'índex</a></p>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Validacions enters i decimals</title>
+    <link rel="icon" type="image/ico" href="imatges/favicon.ico">
+    <script type="text/javascript" src="js/utilitats.js"></script>
+</head>
+<body>
+<h1>Validacions</h1>
+<h2>Validacions enters i decimals</h2>
+<script type="text/javascript">
+    let a;
+    let b = 12.01;
+    document.write("<p> Enter " + a + ": " + validarSencer(a) + "</p>");
+    document.write("<p> Enter " + b + ": " + validarSencer(b) + "</p>");
+    document.write("<p> Decimal " + a + ": " + validarDecimal(a) + "</p>");
+    document.write("<p> Decimal " + b + ": " + validarDecimal(b) + "</p>");
+</script>
+<h2>Validacions telèfons</h2>
+<script type="text/javascript">
+    let telefon = prompt("Telefon mòbil");
+    document.write("<p> Telefon mòbil " + telefon + ": "
+        + validarTelefon(telefon, 0) + "</p>");
+    let telefon = prompt("Telefon fixe");
+    document.write("<p> Telefon fixe " + telefon + ": "
+        + validarTelefon(telefon, 1) + "</p>");
+</script>
+<h2>Validació data</h2>
+<script type="text/javascript">
+    let data = prompt("Data");
+    document.write("<p> Data " + data + ": " + validarData(data) + "</p>");
+
+    document.write("<p> Dies : " + diesMes(2, 2012) + "</p>");
+
+</script>
+<h2>Validació NIF</h2>
+<script type="text/javascript">
+    let nif = prompt("NIF: ");
+    document.write("<p> Nif " + nif + ": " + validarNIF(nif) + "</p>");
+</script>
+<h2>Validació camp obligatori</h2>
+<script type="text/javascript">
+
+    let buida;
+    document.write("<p> Validar undefined: " + validarObligatori(buida) + "</p>");
+    buida = "";
+    document.write("<p> Validar '" + buida + "': " + validarObligatori(buida) + "</p>");
+    buida = "hola";
+    document.write("<p> Validar '" + buida + "': " + validarObligatori(buida) + "</p>");
+</script>
+<p>
+    <a href="indexBack.html">Tornar</a>
+</p>
+</body>
+</html>

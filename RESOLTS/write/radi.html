@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="ca">
+    <head>
+        <title>Calcular la longitud d'una circumferència a partir del radi</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            function longitudCircumferencia(r) {
+                return 2 * Math.PI * r;
+            }
+
+            function executar(a) {
+                let r = parseInt(document.getElementById("radi").value);
+                // document.getElementById("longitud").innerHTML = "Longitud: " + longitudCircumferencia(r);
+                alert("sdfkj");
+            }
+
+            window.onload = function () {
+                // document.getElementById("bCalcular").onclick = executar;
+
+                document.getElementById("bCalcular").onclick = function(){
+                    let r = parseInt(document.getElementById("radi").value);
+                    // document.getElementById("longitud").innerHTML = "Longitud: " + longitudCircumferencia(r);
+                    document.write("<p>"+longitudCircumferencia(r)+"</p>");
+                };
+                document.getElementById("bCalcular2").onclick = function(){
+                    let r = parseInt(document.getElementById("radi").value);
+                    // document.getElementById("longitud").innerHTML = "Longitud: " + longitudCircumferencia(r);
+                    document.getElementById("longitud").innerText=longitudCircumferencia(r);
+                };
+            };
+
+
+        </script>
+        <link href="../css/practica.css" rel="stylesheet">
+        <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+    </head>
+    <body>
+    <div id="container" class="containerPrincipal">
+        <div>
+            <div class="esquerra"><img src="../imatges/cropped-Logo_Pau.png"></div>
+            <div>
+                <h3>Desenvolupament web al costat del client</h3>
+                <h2>Exercicis</h2>
+            </div>
+        </div>
+        <div>
+        <h1>Calcular la longitud d'una circumferència a partir del radi</h1>
+        <form id="formulari">
+            <p><label for="radi">Radi: </label><input type="text" id="radi"></p>
+            <p id="longitud">Longitud: </p>
+            <p><button id="bCalcular" type="button">Calcular (write)</button></p>
+            <p><button id="bCalcular2" type="button">Calcular (id)</button></p>
+        </form>
+        </div>
+    </div>
+    </body>
+</html>

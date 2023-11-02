@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../imatges/favicon.ico">
+    <title>Altres</title>
+
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>&nbsp;</h2>
+        </div>
+    </div>
+    <div>
+        <h1>Altres</h1>
+        <h2>Codificar / decodificar URL</h2>
+        <script type="text/javascript">
+            'use strict';
+            const uri = 'http://www.paucasesnovescifp.cat?nom="Jo mateix"';
+            const codificada = encodeURI(uri);
+            document.write("<p>URL a codificar: " + uri + "</p>");
+            document.write("<p>Amb encodeURI: " + codificada + "</p>");
+            document.write("<p>Decodificada: " + decodeURI(codificada) + "</p>");
+            document.write("<p>Amb encodeURIComponent: " + encodeURIComponent(uri) + "</p>");
+            document.write("<p>Decodificada: " + decodeURIComponent(encodeURIComponent(uri)) + "</p>");
+        </script>
+
+        <h2>Generar numeros al·leatòris</h2>
+        <script type="text/javascript">
+            'use strict';
+            if (Math.random() < 0.5) {
+                document.write("<p>Cara</p>");
+            } else {
+                document.write("<p>Creu</p>");
+            }
+        </script>
+        <h2>Generar una funció</h2>
+        <script type="text/javascript">
+            'use strict';
+            const funcio = new Function("a", "b", "return a+b;");
+            document.write('<p>var funcio = new Function("a", "b", "return a+b;")</p>');
+            document.write("<p>" + funcio(2, 3) + "</p>");
+        </script>
+        <p><a href="index.html#altres">Tornar a l'index</a>.</p>
+    </div>
+</div>
+</body>
+</html>

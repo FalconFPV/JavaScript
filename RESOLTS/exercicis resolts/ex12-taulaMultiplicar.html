@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Taula de multiplicar</title>
+        <link rel="icon" type="image/ico" href="imatges/favicon.ico">
+        <style type="text/css">
+            table,td {
+                border-collapse: collapse;
+                border: 2px solid #000;
+            }
+        </style>
+        <script type="text/javascript" src="js/utilitats.js"></script>
+    </head>
+    <body>
+        <h1>Taula de multiplicar</h1>
+        <table>
+            <script type="text/javascript">
+                let a = llegirSencer("Numero per la taula: ");
+                for (let index = 1; index <= 10; index++) {
+                    document.write("<tr><td>" + a + " x " + index + "</td><td>"
+                            + multiplicacio(a, index) + "</td></tr>");
+                }
+            </script>
+        </table>
+        <p>
+            <a href="indexBack.html">Tornar</a>
+        </p>
+    </body>
+</html>

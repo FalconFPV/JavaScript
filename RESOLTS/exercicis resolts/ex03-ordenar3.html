@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Ordena 3 números</title>
+    <link rel="icon" type="image/ico" href="imatges/favicon.ico">
+</head>
+<body>
+<h1>Ordena 3 números</h1>
+<h3>Dades originals</h3>
+<script type="text/javascript">
+    console.log("Dades originals");
+    let a = parseInt(prompt("Entri el primer número: "));
+    console.log("a=" + a);
+    let b = parseInt(prompt("Entri el segon número: "));
+    console.log("b=" + b);
+    let c = parseInt(prompt("Entri el tercer número: "));
+    console.log("c=" + c);
+    let auxiliar;
+    if (a > b) {
+        auxiliar = a;
+        a = b;
+        b = auxiliar;
+    }
+    if (a > c) {
+        auxiliar = a;
+        a = c;
+        c = auxiliar;
+    }
+    if (b > c) {
+        auxiliar = b;
+        b = c;
+        c = auxiliar;
+    }
+    console.log("Dades ordenades");
+    console.log("a=" + a);
+    console.log("b=" + b);
+    console.log("c=" + c);
+</script>
+<p>
+    <a href="indexBack.html">Tornar</a>
+</p>
+</body>
+</html>

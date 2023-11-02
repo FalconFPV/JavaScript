@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../imatges/favicon.ico">
+    <title>Arrays</title>
+    <script type="text/javascript" src="./js/utilitats.js"></script>
+    <script type="text/javascript">
+        'use strict';
+        window.onload = function () {
+            //Exercici 1
+            let array = ['0', 1, 2.5, 3, 4, "5", 6, 7, 8.5, true, 10];
+
+            //Exercici 2
+            array[15] = 15;
+
+            //Exercici 3
+            let cadena = "";
+            for (let i = 0; i <= array.length; i++) {
+                cadena += "<p>Posicio " + i + ": " + array[i] + "</p>";
+            }
+            document.getElementById("Exercici3").innerHTML = cadena;
+
+            //Exercici 4
+            cadena = "";
+            for (let i in array) {
+                cadena += "<p>" + array[i] + "</p>";
+            }
+            document.getElementById("Exercici4").innerHTML = cadena;
+
+            //Exercici 5
+            cadena = "";
+            for (let valor of array) {
+                cadena += "<p>" + valor + "</p>";
+            }
+            document.getElementById("Exercici5").innerHTML = cadena;
+
+            //Exercici 6
+            cadena = "";
+            array.forEach(valor => {
+                cadena += "<p>" + valor + "</p>";
+            });
+            document.getElementById("Exercici6").innerHTML = cadena;
+
+            //Exercici 7
+            const paraules1 = ["això", "era", "i"];
+            cadena = "<p>Array 1: " + JSON.stringify(paraules1) + "</p>";
+            const paraules2 = ["no", "era"];
+            cadena += "<p>Array 2: " + JSON.stringify(paraules2) + "</p>";
+            const concatenat = paraules1.concat(paraules2);
+            cadena += "<p>Array concatenat: " + JSON.stringify(concatenat) + "</p>";
+            document.getElementById("Exercici7").innerHTML = cadena;
+
+            //Exercici 8
+            const frase = concatenat.join(" ");
+            document.getElementById("Exercici8").innerHTML = "<p>" + frase + "</p>";
+
+            //Exercici 9
+            let fraseGirada = concatenat.reverse();
+            fraseGirada = fraseGirada.join(" ");
+            document.getElementById("Exercici9").innerHTML = "<p>" + fraseGirada + "</p>";
+
+            //Exercici 10
+            let pila = [];
+            for (let i = 0; i < 10; i++) {
+                pila.push(i);
+            }
+            cadena = "";
+            while (pila.length > 0) {
+                cadena += "<p>" + pila.pop() + "</p>";
+            }
+            document.getElementById("Exercici10").innerHTML = cadena;
+
+            //Exercici 11
+            let ordena = [];
+            for (let i = 0; i < 10; i++) {
+                ordena.push(parseFloat((Math.random() * 100 + 1).toFixed(2)));
+            }
+            cadena = "<p>" + JSON.stringify(ordena) + "</p>";
+            ordena.sort((a, b) => a - b);
+            cadena += "<p>" + JSON.stringify(ordena) + "</p>";
+            document.getElementById("Exercici11").innerHTML = cadena;
+
+            //Exercici 12
+            let paraules = ["Això", "era", "i", "no", "era"];
+            let invers = paraules.map(actual => {
+                let nova = "";
+                for (let j = actual.length - 1; j >= 0; j--) {
+                    nova += actual.charAt(j);
+                }
+                return nova;
+            });
+            // let invers=paraules.map(function(paraula){
+            //     return paraula.split("").reverse().join("");
+            // });
+
+            document.getElementById("Exercici12").innerHTML = invers;
+
+            //Exercici 13
+            document.getElementById("Exercici13").innerHTML = ordena.reduce((anterior, actual) => anterior + actual);
+        };
+    </script>
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>&nbsp;</h2>
+        </div>
+    </div>
+    <div>
+        <h1>Arrays</h1>
+
+        <h2>Recorregut utilitzant l'index</h2>
+        <div id="Exercici3"></div>
+
+        <h2>Recorregut utilitzant in</h2>
+        <div id="Exercici4"></div>
+
+        <h2>Recorregut utilitzant of</h2>
+        <div id="Exercici5"></div>
+
+        <h2>Recorregut utilitzant foreach</h2>
+        <div id="Exercici6"></div>
+
+        <h2>Concatena dos arrays</h2>
+        <div id="Exercici7"></div>
+
+        <h2>Convertir array en frase</h2>
+        <div id="Exercici8"></div>
+
+        <h2>Inverteix l'array i converti'l en frase</h2>
+        <div id="Exercici9"></div>
+
+        <h2>Implementa una pila utilitzant els mètodes que proporciona
+            l'array</h2>
+        <div id="Exercici10"></div>
+
+        <h2>Crea un array de valors numèrics. Ordena-los utilitzant el
+            mètode sort</h2>
+        <div id="Exercici11"></div>
+
+        <h2>Crea un array que contengui tres o quatre paraules. Utilitza <em>map</em> per generar un array amb les
+            paraules
+            invertides. Per exemple, si la primera paraula és <em>array</em> la funció del map l’ha de convertir en
+            <em>yarra</em>.</h2>
+        <div id="Exercici12"></div>
+
+        <h2>Crea una funció que sumi tots els valors d’un array utilitzant reduce.</h2>
+        <div id="Exercici13"></div>
+        <p><a href="index.html">Tornar a l'index</a>.</p>        
+    </div>
+</div>
+</body>
+</html>

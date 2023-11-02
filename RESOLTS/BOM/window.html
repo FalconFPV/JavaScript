@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../imatges/favicon.ico">
+    <title>Window</title>
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+    <script type="text/javascript">
+        'use strict';
+
+        window.onload = function () {
+            let finestra;
+
+            document.getElementById("bObrir").onclick = function () {
+                if (finestra === undefined || finestra.closed)
+                    finestra = window.open('tanca.html', 'Tanca', 'width=100, height=100');
+            };
+
+            document.getElementById("bResize").onclick = function () {
+                if (finestra !== undefined && !finestra.closed)
+                    finestra.resizeTo(500, 400);
+            };
+
+            document.getElementById("bMove").onclick = function () {
+                if (finestra !== undefined && !finestra.closed)
+                    finestra.moveTo(500, 400);
+            };
+
+            document.getElementById("bCanvia").onclick = function () {
+                if (finestra !== undefined && !finestra.closed)
+                    finestra.document.getElementById('paragraf').innerHTML = 'Canviat';
+            };
+
+            document.getElementById("bTanca").onclick = function () {
+                if (finestra !== undefined && !finestra.closed)
+                    finestra.close();
+            };
+        };
+    </script>
+
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>&nbsp;</h2>
+        </div>
+    </div>
+    <div>
+
+        <h1>Window</h1>
+        <div>
+            <button id="bObrir" onclick>Obre</button>
+            <button id="bResize">Modifica</button>
+            <button id="bMove">Mou</button>
+            <button id="bCanvia">Canvia</button>
+            <button id="bTanca">Tanca</button>
+        </div>
+        <p><a href="index.html">Tornar a l'index</a>.</p>
+    </div>
+</div>
+</body>
+</html>

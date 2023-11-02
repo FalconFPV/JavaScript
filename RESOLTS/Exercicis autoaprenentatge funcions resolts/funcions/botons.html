@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="../imatges/favicon.ico">
+    <title>Funcions: 12</title>
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+    <script type="text/javascript">
+        'use strict';
+
+
+        window.onload = function () {
+            //Exercici 12
+            let paraula;
+            document.getElementById("demana").onclick = () => {
+                paraula = prompt("Escriu una paraula:");
+            }
+            document.getElementById("mostra").onclick = () => {
+                document.getElementById("mostrador").innerText = paraula;
+            }
+        };
+    </script>
+
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>Exercicis</h2>
+        </div>
+    </div>
+    <div>
+        <h1>Exercici 12</h1>
+        <p>
+            <button id="demana">Demana paraula</button>
+        </p>
+        <p>
+            <button id="mostra">Mostra paraula</button>
+        </p>
+        <p id="mostrador"></p>
+        <p><a href="index.html">Tornar a l'índex</a></p>
+    </div>
+</div>
+</body>
+</html>

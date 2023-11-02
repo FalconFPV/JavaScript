@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Institut</title>
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+<!--    <script src="js/institut.js"></script>-->
+    <script type="module">
+
+        import {Alumne, Modul} from './js/institut.js';
+        window.onload = () => {
+            let moduls = new Map();
+            moduls.set("SWDWC", new Modul("Desenvolupament client", "SWDWC", "S2W"));
+            moduls.set("SWDWS", new Modul("Desenvolupament servidor", "SWDWS", "S2W"));
+            moduls.set("SWDIW", new Modul("Disseny d'interfícies", "SWDIW", "S2W"));
+            moduls.set("SWPRO", new Modul("Programació", "SWPRO", "S1W"));
+            moduls.set("SWBBD", new Modul("Bases de dades", "SWBBD", "S1W"));
+            moduls.set("SWEDE", new Modul("Entorns", "SWEDE", "S1W"));
+            moduls.forEach((actual) => {
+                document.getElementById("llistaModuls").innerHTML += "<li>" + actual.nom + " " + actual.codi + " " + actual.curs + "</li>"
+            });
+
+            let alumne = new Alumne("Jo", "Mateix", "S2W");
+            alumne.afegirModul(moduls.get("SWDWC"));
+            alumne.afegirModul(moduls.get("SWPRO"));
+            alumne.afegirModul(moduls.get("SWDWS"));
+            alumne.eliminarModul(moduls.get("SWDWC"));
+            console.log(alumne.nomComplet);
+            let cadena = "";
+            cadena += "<li><p>" + alumne.nomComplet + "</p><ol>";
+            for (let actual of alumne.moduls.values()) {
+                cadena += "<li>" + actual.nom + " " + actual.codi + " " + actual.curs + "</li>"
+            }
+            cadena += "</ol></li>";
+            document.getElementById("llistaAlumnes").innerHTML += cadena;
+        };
+    </script>
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>Exercicis UT 4</h2>
+        </div>
+    </div>
+    <div>
+        <h1>Institut</h1>
+        <h2>Mòduls</h2>
+        <ul id="llistaModuls"></ul>
+        <h2>Alumnes</h2>
+        <ul id="llistaAlumnes"></ul>
+        <p><a href="index.html">Torna a l'índex</a></p>
+    </div>
+</div>
+</body>
+</html>

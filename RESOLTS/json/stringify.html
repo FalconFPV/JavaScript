@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="ca">
+<head>
+    <title>Objectes convertits a JSON</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/json.js"></script>
+    <script type="text/javascript">
+        'use strict';
+        window.onload = function () {
+            const persona = {nom: "Jo", llinatges: "Mateix", dni: "11111111H"};
+            const array = [1, 2, 3, 4, 5];
+            const matriu = [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]];
+            const arrayPersones = [{nom: "Jo", llinatges: "Mateix", dni: "11111111H"}, {
+                nom: "Tu",
+                llinatges: "Altre",
+                dni: "11111112H"
+            }, {nom: "Ell", llinatges: "Mateix", dni: "11111113H"}];
+            document.getElementById("dPersona").innerHTML = toJSON(persona);
+            document.getElementById("dArray").innerHTML = toJSON(array);
+            document.getElementById("dMatriu").innerHTML = toJSON(matriu);
+            document.getElementById("dArrayObjectes").innerHTML = toJSON(arrayPersones);
+        };
+    </script>
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img alt="Logo del CIFP Pau Casesnoves" src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>Exercicis UT 4</h2>
+        </div>
+    </div>
+    <div>
+        <h1>Objectes convertits a JSON</h1>
+        <h2>Persona</h2>
+        <div id="dPersona"></div>
+        <h2>Array</h2>
+        <div id="dArray"></div>
+        <h2>Matriu quadrada</h2>
+        <div id="dMatriu"></div>
+        <h2>Array d'objectes</h2>
+        <div id="dArrayObjectes"></div>
+        <p><a href="index.html">Torna a l'índex</a></p>
+    </div>
+</div>
+</body>
+</html>

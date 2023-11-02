@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../imatges/favicon.ico">
+    <title>Date</title>
+    <script>
+        'use strict';
+
+        function edat(neixement) {
+            let avui = new Date();
+            let dif = avui.getFullYear() - neixement.getFullYear();
+            if ((neixement.getMonth() > avui.getMonth()) || ((neixement.getMonth() === avui.getMonth()) && (avui.getDate() < neixement.getDate()))) {
+                dif--;
+            }
+            return dif;
+        }
+
+        window.onload = function () {
+            //Exercici 1
+            let data = new Date("05/11/2021");
+            // document.getElementById("Exercici1").innerHTML = data.getDate() + "/" + data.getMonth() + "/" + data.getFullYear();
+            document.getElementById("Exercici1").innerHTML = data.toLocaleDateString();
+
+            //Exercici 2
+            let any = 2021;
+            let mes = 9; //octubre
+            let dia = 29;
+            let hores = 19;
+            let minuts = 23;
+            let segons = 12;
+            let data2 = new Date(any, mes, dia, hores, minuts, segons);
+            document.getElementById("Exercici2").innerHTML = data2.toLocaleDateString() + " " + data2.toLocaleTimeString();
+            //Exercici 3
+            document.getElementById("Exercici3").innerHTML = "<p>Dia: " + data2.getDate() + "</p>" +
+                "<p>Mes: " + data2.getMonth() + "</p>" +
+                "<p> Any: " + data2.getFullYear() + "</p> " +
+                "<p>Hora: " + data2.getHours() + "</p>" +
+                "<p>Minut: " + data2.getMinutes() + "</p>" +
+                "<p>Segon: " + data2.getSeconds() + "</p>";
+            //Exercici 4
+            document.getElementById("Exercici4").innerHTML = data2.toLocaleDateString() + " " + (data2.getDay() === 6 || data2.getDay() === 0 ? "Cap de setmana :)" : "Dia feiner :(");
+            //Exercici 5
+            let data3 = new Date("12/21/2021");
+            let inici = new Date(data3.getFullYear(), 0, 1);
+            let dif = data3 - inici;
+            let dies = Math.ceil(dif / (1000 * 60 * 60 * 24));
+            document.getElementById("Exercici5").innerHTML = "<p> Data:" + data3.toLocaleDateString() + "</p>" +
+                "<p>Dies: " + dies + "</p>";
+
+            //Exercici 6
+            let naixement = new Date(2013, 3, 7);
+            document.getElementById("Exercici6").innerHTML = "<p>Data de neixement: " + naixement.toLocaleDateString() + "</p>" +
+                "<p> Edat: " + edat(naixement) + "</p>";
+        };
+    </script>
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>&nbsp;</h2>
+        </div>
+    </div>
+    <div>
+        <h1>Date</h1>
+        <h2>Date a partir d'una cadena(format americà)</h2>
+        <p id="Exercici1"></p>
+
+        <h2>Crea un objecte date a partir de les dades any, mes, dia,
+            hores, minuts, segons</h2>
+        <p id="Exercici2"></p>
+        <h2>De l'objecte Date creat a l'exercici anterior, recupera tots els seus elements: any, mes, data, ...</h2>
+        <div id="Exercici3"></div>
+        <h2>Escriu una funció que ens digui si una data determinada cau en cap de setmana (dissabte o diumenge).</h2>
+        <p id="Exercici4"></p>
+        <h2> Escriu una funció Javascript que ens digui quans dies han passat des de l'inici de l'any fins una data
+            donada del
+            mateix any.</h2>
+        <div id="Exercici5"></div>
+        <h2> Programa una funció que torni l'edat d'una persona a partir de la seva data de naixement.</h2>
+        <div id="Exercici6"></div>
+        <p><a href="index.html#date">Tornar a l'index</a>.</p>
+    </div>
+</div>
+</body>
+</html>
