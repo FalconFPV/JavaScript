@@ -1,0 +1,140 @@
+
+    <!-- EXERCICI 3. Copia la pàgina mostruari.html amb el nom modificaForm.html. Programa el botó normal de manera que, 
+        utilitzant les diferents notacions vistes als apunts:
+
+    Afegeixi un paràgraf amb l'explicació de què implica al servidor que un camp sigui només de lectura o estigui deshabilitat. -->
+    <!DOCTYPE html>
+    <html lang="ca">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Dades rebudes del formulari</title>
+        <link href="../css/practica.css" rel="stylesheet">
+        <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+        <style>
+            .titol {
+                font-weight: bold;
+            }
+        </style>
+        <script type="text/javascript">
+            window.onload = function () {
+                const searchParams = new URLSearchParams(location.search);
+                const mostrador = document.getElementById('mostrador');
+                for (const [nom, valor] of searchParams) {
+                    mostrador.innerHTML += `<p><strong>${nom}</strong>: ${valor}</p>`;
+                }
+    
+                document.getElementById("boto").onclick = function () {
+                    history.back();
+                }
+                document.getElementById('normal').onclick = function (){
+                    //ASSIGNAR VALOR A LLISTES DESPLEGABLES
+                    document.getElementById('tria').value = 'Opció 2';
+                    //MARCAR RADIOBUTTONS
+                    document.getElementById('radio1').checked = true;
+                    //MARCAR CHECKBOXES
+                    document.getElementById('box1').checked = true;
+                    //DESHABILITAR CAMPS DE TEXT
+                    document.getElementById('text').disabled = true;
+                    //CAMP DE TEXT NOMÉS LECTURA
+                    document.getElementById('textread').readOnly = true;
+                    //AFEGIR UN PARÀGRAF AMB EXPLICACIÓ DE QUÈ IMPLICA AL SERVIDOR QUE UN CAMP SIGUI NOMÉS DE LECTURA O ESTIGUI DESHABILITAT
+                    var paragraf = document.createElement("p");
+                    paragraf.textContent = "Un camp només de lectura no es pot modificar però sí que es pot enviar al servidor. Un camp deshabilitat no es pot modificar ni enviar al servidor.";
+                    document.getElementById('explicacio').appendChild(paragraf);
+                }
+            }
+        </script>
+      
+   </head>
+   <body>
+    <div id="container" class="containerPrincipal">
+        <div>
+            <div class="esquerra"><img alt="Logo CIFP Pau Casesnoves" src="imatges/cropped-Logo_Pau.png"></div>
+            <div>
+                <h3>Desenvolupament web al costat del client</h3>
+                <h2>Exercicis UT 5</h2>
+            </div>
+        </div>
+        <div>
+            <h1>Dades rebudes del formulari</h1>
+            <div id="mostrador"></div>
+            <p>
+                <button type="button" id="boto">Tornar</button>
+            </p>
+        </div>
+    </div>
+    <form>
+        <fieldset>
+            <legend>Usuari</legend>
+            <table>
+                <tr>
+                    <td>Text <input type="text" placeholder="Text" name="text" id="text"></td>
+                </tr>
+                <tr>
+                    <td>Password <input type="password" name="passw"></td>
+                </tr>
+            </table>
+        </fieldset>
+    
+        <fieldset>
+            <legend>Opcions</legend>
+            <table>
+                <tr>
+                    <td>Radio buttons </td>
+                    <td><input type="radio" id="radio1" name="radio1">Opció 1</td>
+                    <td><input type="radio" id="radio2" name="radio2">Opció 2</td>
+                </tr>
+                <tr>
+                    <td>Checkbox</td>
+                    <td><input type="checkbox" name="box1" id="box1">Opció 1</td>
+                    <td><input type="checkbox" name="box2" id="box2">Opció 2</td>
+                </tr>
+                <tr>
+                    <td>Llista desplegable</td>
+                    <td>
+                        <select name="Triar" id="tria">
+                            <option value="Opció 1" name="opcio1">Opció 1</option>
+                            <option value="Opció 2" name="opcio2">Opció 2</option>
+                            <option value="Opció 3" name="opcio3">Opció 3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Llista amb grups d'opcions</td>
+                    <td>
+                        <select>
+                            <!-- Grup 1 -->
+                            <optgroup label="Grup 1">
+                                <option value="Opció 1" name="Opció 1">Opció 1</option>
+                                <option value="Opció 2" name="Opció 2">Opció 2</option>
+                                <option value="Opció 3" name="Opció 3">Opció 3</option>
+                            </optgroup>
+                          
+                            <!-- Grup 2 -->
+                            <optgroup label="Grup 2">
+                                <option value="Opció 4" name="Opció 4">Opció 4</option>
+                                <option value="Opció 5" name="Opció 5">Opció 5</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><textarea name="textarea" id="text" cols="20" rows="5" placeholder="TextArea" id="text2"></textarea></td>
+                    <td><input type="text" name="textread" id="textread" placeholder="Textreadonly"></td>
+                </tr>
+            </table>
+        </fieldset>
+    
+        <table>
+            <tr>
+                <td><input type="submit" value="Enviar"></td>
+                <td><input type="reset" value="Reset"></td>
+                <td><input type="button" value="Normal" id="normal"></td>
+            </tr>
+        </table>
+        <div id="explicacio"></div>
+    </form>
+    </body>
+    </html>
+    
+    

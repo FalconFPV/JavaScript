@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Dades rebudes del formulari</title>
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+    <style>
+        .titol {
+            font-weight: bold;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            const searchParams = new URLSearchParams(location.search);
+            const mostrador=document.getElementById('mostrador');
+            for(const [nom, valor] of searchParams){
+                mostrador.innerHTML+=`<p><strong>${nom}</strong>: ${valor}</p>`
+            }
+
+            document.getElementById("boto").onclick = function () {
+                history.back();
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- EXERCICI 1. (Opcional) Crea la pàgina mostruari.html amb un formulari. Utilitza tots els tags vists al pdf. 
+    Hauria d'incloure com a mínim una capsa de text, un password, un grup de radiobuttons, un parell de checkboxes, 
+    una llista desplegable, una altra amb grups d'opcions, un text area i un botó d'enviar, un de reset i un altre normal. 
+    
+    Utilitzau també el fieldset. Comprovau que tot funciona com ho hauria de fer. Enviau el formulari a un php que mostri dins 
+    la pàgina els valors rebuts, amb GET i amb POST. Com a alternativa podeu utilitzar la pàgina repGet.html. -->
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img alt="Logo CIFP Pau Casesnoves" src="imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>Exercicis UT 5</h2>
+        </div>
+    </div>
+    <div>
+        <h1>Dades rebudes del formulari</h1>
+        <div id="mostrador"></div>
+        <p>
+            <button type="button" id="boto">Tornar</button>
+        </p>
+    </div>
+</div>
+<form action="">
+    <fieldset>
+        <legend>Usuari</legend>
+        <table>
+            <tr>
+                <td>Text <input type="text" placeholder="Text" name="text"></td>
+            </tr>
+            <tr>
+                <td>Password <input type="password" name="passw"></td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend>Opcions</legend>
+        <table>
+            <tr>
+                <td>Radio buttons </td>
+                <td><input type="radio">Opció 1</td>
+                <td><input type="radio">Opció 2</td>
+            </tr>
+            <tr>
+                <td>Checkbox</td>
+                <td><input type="checkbox" name="Opció 1">Opció 1</td>
+                <td><input type="checkbox" name="Opció 2">Opció 2</td>
+            </tr>
+            <tr>
+                <td>Llista desplegable</td>
+                <td>
+                    <select name="Triar" id="tria">
+                        <option value="Opció 1">Opció 1</option>
+                        <option value="Opció 2">Opció 2</option>
+                        <option value="Opció 3">Opció 3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Llista amb grups d'opcions</td>
+                <td>
+                    <select>
+                        <!-- Grup 1 -->
+                        <optgroup label="Grup 1">
+                            <option value="Opció 1" name="Opció 1">Opció 1</option>
+                            <option value="Opció 2" name="Opció 2">Opció 2</option>
+                            <option value="Opció 3" name="Opció 3">Opció 3</option>
+                        </optgroup>
+                      
+                        <!-- Grup 2 -->
+                        <optgroup label="Grup 2">
+                            <option value="Opció 4" name="Opció 4">Opció 4</option>
+                            <option value="Opció 5" name="Opció 5">Opció 5</option>
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><textarea name="textarea" id="text" cols="20" rows="5" placeholder="TextArea"></textarea></td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <table>
+        <tr>
+            <td><input type="submit" value="Enviar"></td>
+            <td><input type="reset" value="Reset"></td>
+            <td><input type="button" value="Normal"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
+

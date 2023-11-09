@@ -10,25 +10,26 @@
 	<form>
 		<label for="radi">Radi:</label>
 		<input type="number" id="radi" name="radi"><br><br>
-		<button type="button" onclick="calcularCircunferencia()">Calcular</button>
-		<button type="button" onclick="calcularCircunferenciabyid()">Calcular2</button>
+		<p id="resultat"></p>
+		<!-- <button type="button" onclick="calcularCircunferencia()">Calcular</button> -->
 	</form>
-	<p id="longitud"></p>
+	<button id="longitud" type="button">Resultat</button>
 	<script>
-		function calcularCircunferencia() {
-			var radi = document.getElementById("radi").value;
+		// function calcularCircunferencia() {
+		// 	var radi = document.getElementById("radi").value;
 
-			var longitud = 2 * Math.PI * radi;
+		// 	var longitud = 2 * Math.PI * radi;
 			
-			document.write("La longitud de la circumferència és: " + longitud);
-		}
-		function calcularCircunferenciabyid() {
+		// 	document.write("La longitud de la circumferència és: " + longitud);
+		// }
+		function calcularCircunferencia(){
 			var radi = document.getElementById("radi").value;
-
-			var longitud = 2 * Math.PI * radi;
-			
-			document.getElementById("longitud").innerHTML = "La longitud de la circumferència és: " + longitud;
+			return longitud = 2 * Math.PI * radi;
 		}
-	</script>
+		
+		document.getElementById('longitud').onclick= function (){
+			document.getElementById('resultat').innerHTML = calcularCircunferencia();
+		}
+	</script> 
 </body>
 </html>

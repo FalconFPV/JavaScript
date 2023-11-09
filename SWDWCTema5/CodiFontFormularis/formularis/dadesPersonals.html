@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Dades rebudes del formulari</title>
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+    <style>
+        .titol {
+            font-weight: bold;
+        }
+    </style>
+    <script  type="module">
+        'use strict';
+        import{validarObligatori, validarData, validarTelefon, validarTelefonMobil, validarNIF, validarSencer, validarDecimal} from '../js/validacions.js';
+        window.onload = function () {
+            const searchParams = new URLSearchParams(location.search);
+            const mostrador=document.getElementById('mostrador');
+            for(const [nom, valor] of searchParams){
+                mostrador.innerHTML+=`<p><strong>${nom}</strong>: ${valor}</p>`
+            }
+            
+            document.getElementById("boto").onclick = function () {
+                history.back();
+            }
+            /*
+            EXERCICI 5. Programau una funció que realitzi aquestes validacions i assignau-la a l'esdeveniment click del botó.
+            */
+            document.getElementById('normal').onclick = function () {
+                //TORNAM A POSAR ELS COLORS DEL FORMULARI PER DEFECTE
+                document.getElementById('tel1').style.backgroundColor = "";
+                document.getElementById('tel2').style.backgroundColor = "";
+                document.getElementById('data').style.backgroundColor = "";
+                document.getElementById('nom').style.backgroundColor = "";
+                document.getElementById('llinatges').style.backgroundColor = "";
+                document.getElementById('mail').style.backgroundColor = "";
+
+                var avis="";
+                //VALIDAM ELS TELÉFONS
+                if (!validarTelefonMobil(document.getElementById('tel1').value)) {
+                    document.getElementById('tel1').style.backgroundColor = "red";
+                    avis+="Telèfon 1 incorrecte. -";
+                }
+
+                if (!validarTelefonMobil(document.getElementById('tel2').value)) {
+                    document.getElementById('tel2').style.backgroundColor = "red";
+                    avis+="Telèfon 2 incorrecte. -";
+                }
+
+                //VALIDAM DATA 
+                if (!validarData(document.getElementById('data').value)) {
+                    document.getElementById('data').style.backgroundColor = "red";
+                    avis+="Data incorrecta. -";
+                }
+
+                //VALIDAM QUE S'HAGIN INTRODUIT NOM, LLINATGES I MAIL
+                if (document.getElementById('nom').value.trim() === "") {
+                    document.getElementById('nom').style.backgroundColor = "red";
+                }
+
+                if (document.getElementById('llinatges').value.trim() === "") {
+                    document.getElementById('llinatges').style.backgroundColor = "red";
+                }
+
+                if (document.getElementById('mail').value.trim() === "") {
+                    document.getElementById('mail').style.backgroundColor = "red";
+                }
+
+                //COMPROVAM SI HI HA ERRORS
+                if (
+                    document.getElementById('tel1').style.backgroundColor === "red" ||
+                    document.getElementById('tel2').style.backgroundColor === "red" ||
+                    document.getElementById('data').style.backgroundColor === "red" ||
+                    document.getElementById('nom').style.backgroundColor === "red" ||
+                    document.getElementById('llinatges').style.backgroundColor === "red" ||
+                    document.getElementById('mail').style.backgroundColor === "red"
+                ) {
+                    //MOSTRAM ERRORS DE LES VALIDACIONS
+                    alert(avis);
+                } else {
+                    //MOSTRAM EL MISSATGE DE QUE NO HI HA ERRORS
+                    var paragraf = document.createElement("p");
+                    paragraf.textContent = "TOTA LA INFORMACIÓ ÉS CORRECTE!";
+                    document.getElementById('mostrar').appendChild(paragraf);
+                }
+            }
+
+        }
+    </script>
+</head>
+<!-- EXERCICI 4. Crea un formulari amb controls per el nom, els llinatges, dos telèfons, un mail, una data de naixement, 
+    el sexe, una illa, una població, un carrer i un codi postal, a més d'una breu descripció. Utilitzau els controls que cregueu més adients per a cada un.
+    
+    Agrupau el nom, els llinatges i un telèfon dins un fieldset amb la llegenda Dades bàsiques i els altres controls a un altre amb la llegenda Altres dades.
+    Afegiu un botó de tipus button. Executarà una sèrie de validacions sobre el formulari (veure exercici següent). -->
+<body>
+    <div id="container" class="containerPrincipal">
+        <div>
+            <div class="esquerra"><img alt="Logo CIFP Pau Casesnoves" src="imatges/cropped-Logo_Pau.png"></div>
+            <div>
+                <h3>Desenvolupament web al costat del client</h3>
+                <h2>Exercicis UT 5</h2>
+            </div>
+        </div>
+        <div>
+            <h1>Dades rebudes del formulari</h1>
+            <div id="mostrador"></div>
+            <p>
+                <button type="button" id="boto">Tornar</button>
+            </p>
+        </div>
+    </div>
+    <div id="mostrar"></div>
+    <form>
+        <fieldset>
+            <legend>Dades basiques</legend>
+            <table>
+                <tr>
+                    <td>Nom <input type="text" placeholder="Nom" name="nom" id="nom"></td>
+                </tr>
+                <tr>
+                    <td>Llinatges <input type="text" placeholder="Llinatges" name="llinatges" id="llinatges"></td>
+                </tr>
+                <tr>
+                    <!-- validam teléfon -->
+                    <td>Telèfon 1 <input type="tel" placeholder="Telèfon 1" name="tel1" id="tel1"></td>
+                </tr>
+            </table>
+        </fieldset>
+    
+        <fieldset>
+            <legend>Altres dades</legend>
+            <table>
+                <tr>
+                    <!-- validam teléfon -->
+                    <td>Telèfon 2 <input type="tel" placeholder="Telèfon 2" name="tel2" id="tel2"></td>
+                </tr>
+                <tr>
+                    <!-- validam mail -->
+                    <td>Mail <input type="email" placeholder="Mail" name="mail" id="mail"></td>
+                </tr>
+                <tr>
+                    <!-- validam data -->
+                    <td>Data de naixement <input type="text" placeholder="Data de naixement" name="data" id="data"></td>
+                </tr>
+                <tr>
+                    <td>Sexe <input type="radio" name="sexe" value="home">Home <input type="radio" name="sexe" value="dona">Dona</td>
+                </tr>
+                <tr>
+                    <td>Illa <select name="illa">
+                        <option value="mallorca">Mallorca</option>
+                        <option value="menorca">Menorca</option>
+                        <option value="eivissa">Eivissa</option>
+                        <option value="formentera">Formentera</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Població <input type="text" placeholder="Població" name="poblacio"></td>
+                </tr>
+                <tr>
+                    <td>Carrer <input type="text" placeholder="Carrer" name="carrer"></td>
+                </tr>
+                <tr>
+                    <td>Codi postal <input type="text" placeholder="Codi postal" name="codiPostal"></td>
+                </tr>
+                <tr>
+                    <td>Breu descripció <textarea name="breuDescripcio" cols="30" rows="10"></textarea></td>
+                </tr>
+            </table>
+        </fieldset>
+    
+        <table>
+            <tr>
+                <td><input type="submit" value="Enviar"></td>
+                <td><input type="reset" value="Reset"></td>
+                <td><input type="button" value="Normal" id="normal"></td>
+            </tr>
+        </table>
+    </form>
+    </body>
+</html>

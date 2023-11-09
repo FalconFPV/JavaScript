@@ -15,10 +15,9 @@ Funciona el botó? Inclou en un paràgraf l’explicació. -->
     <p id="explicacio"></p>
 
     <script>
-        document.getElementById("tancarPagina").addEventListener("click", function() {
+        document.getElementById("tancarPagina").onclick = function (){
             window.close();
-            document.getElementById("explicacio").textContent = "La finestra s'ha tancat.";
-        });
+        }
     </script>
 </html>
 
