@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicis esdeveniments</title>
+    <link href="../css/practica.css" rel="stylesheet">
+    <link href="../imatges/logo-cifp.ico" rel="icon" type="image/x-icon">
+</head>
+<body>
+<div id="container" class="containerPrincipal">
+    <div>
+        <div class="esquerra"><img alt="Logo del CIFP Pau Casesnoves" src="../imatges/cropped-Logo_Pau.png"></div>
+        <div>
+            <h3>Desenvolupament web al costat del client</h3>
+            <h2>Exercicis UT 5</h2>
+        </div>
+    </div>
+    <div>
+        <h1>
+            Exercicis esdeveniments</h1>
+        <ol>
+            <li><p>
+                Mostruari d'esdeveniments. Creau la pàgina amb el següent:</p>
+                <ol>
+                    <li><p>
+                        Un títol <i>h1</i> que indiqui el que és la pàgina.</p>
+                    </li>
+                    <li><p>
+                        Un paràgraf de text, amb un identificador. El text ha d’incloure
+                        una part amb negreta o cursiva.</p>
+                    </li>
+                    <li><p>
+                        Un formulari amb un camp de text i dos botons, un de <i>submit</i>
+                        i un de <i>reset</i>.</p>
+                    </li>
+                    <li><p>
+                        Un <i>div</i>, també amb un identificador. Aplicau-li un estil que
+                        posi l’<i>overflow</i> a <i>
+                        scroll</i>.</p>
+                    </li>
+                    <li><p>
+                        Una funció <i>afegeix(nomEsdeveniment)</i> amb un paràmetre. Ha
+                        d'afegir aquest paràmetre al principi de l'<i>innerHTML</i> del<i>
+                    </i><i>div</i><i> </i>del punt anterior. Si voleu, programau un
+                        comptador que compti quantes vegades s'executa la funció i
+                        afegiu-lo al principi del paràmetre.</p>
+                    </li>
+                    <li><p>
+                        Programau tots els esdeveniment que pogueu al paràgraf i a la
+                        capsa de text. Tots els esdeveniment faran el mateix: Cridar a la
+                        funció del punt anterior amb una cadena de text que indiqui quin
+                        esdeveniment s'ha llançat i a quin element, per exemple:
+                        “paragraf: onmousedown”.</p>
+                    </li>
+                    <li><p>
+                        Programau també els esdeveniments del <i>form</i> i de <i>window</i>.</p>
+                        <p>Per evitar que el submit enviï el formulari i ens recarregui la
+                            pàgina utilitzau el <i>preventDefault</i>.</p>
+                    </li>
+                </ol>
+
+                <p><a href="mostruariEsdeveniments.html">Ves-hi</a></p>
+            </li>
+            <li><p>
+                Copiau el fitxer <i>dadesPersonals.html</i> dels exercicis anteriors
+                amb el nom <i>dadesPersonals2.html</i>.</p>
+                <ol>
+                    <li><p>
+                        Utilitzau un esdeveniment del window per a assignar valors per
+                        defecte a alguns camps i situar el cursor al primer camp.</p>
+                    </li>
+                    <li>
+                        Eliminau el botó <i>validar</i> i afegiu els botons <i>Enviar</i>
+                        i <i>Netejar</i>, el primer de tipus <i>submit</i> i el segon
+                        <i>reset</i>.</p>
+                    </li>
+                    <li><p>
+                        Posau les validacions que havíeu fet abans a un esdeveniment del
+                        formulari.</p>
+                    </li>
+                    <li><p>
+                        Utilitzau un altre esdeveniment del formulari per a demanar a
+                        l'usuari si està segur de netejar el formulari. El boto <i>Netejar</i>
+                        ha d’eliminar qualsevol rastre d’errors.</p>
+                    </li>
+                    <li><p>
+                        Programau el necessari per aconseguir que en canviar la illa i anar
+                        a un altre control, la llista de poblacions es carregui amb
+                        poblacions d'aquesta illa en concret. Per exemple, podeu guardar
+                        les poblacions de cada illa dins d'un array.</p>
+                    </li>
+                </ol>
+                <p><a href="dadesPersonals2.html">Ves-hi</a></p>
+            </li>
+            <li><p>
+                Crea la pàgina <i>eventObject.html</i> amb un formulari amb un botó
+                i una capsa de text. Programa una funció que rebi com a paràmetre
+                un esdeveniment i que mostri totes les propietats (nom i valor)
+                d'aquest objecte. Assigna aquesta funció als esdeveniments <i>onclick</i>
+                del botó i <i>onkeydown</i> de la capsa de text.</p>
+                <p><a href="eventObject.html">Ves-hi</a></p>
+            </li>
+            <li><p>(Opcional) Crea la pàgina<i> bubblingForm.html</i> amb un
+                formulari amb deu camps de text i un div. Programa el javascript de
+                manera que al div ens digui en tot moment quantes tecles ha pitjat
+                l'usuari, sense diferenciar a quina capsa de text ho ha fet.</p>
+                <p><a href="bubblingForm.html">Ves-hi</a></p>
+            </li>
+            <li><p>
+                Crea una pàgina amb un botó i un div. Assigna-li 3 funcions
+                diferents a l'esdeveniment onclick del botó, cada una ha d'afegir
+                un text diferent al div. Comprova que en pitjar el botó s'executen
+                tots tres i en l'ordre correcte.</p>
+            </li>
+            <li>(Opcional) Copia l’html de l’exercici anterior. Modifica
+                el codi de la primera funció de l'exercici de manera que aturi
+                l'execució de les altres dues funcions.</p>
+                <p><a href="Listener2.html">Ves-hi</a></p>
+            </li>
+        </ol>
+        <p><a href="../index.html">Torna a l'índex principal</a></p>
+    </div>
+</div>
+</body>
+</html>
