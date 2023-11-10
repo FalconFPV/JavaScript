@@ -10,19 +10,7 @@
             font-weight: bold;
         }
     </style>
-    <script type="text/javascript">
-        window.onload = function () {
-            const searchParams = new URLSearchParams(location.search);
-            const mostrador=document.getElementById('mostrador');
-            for(const [nom, valor] of searchParams){
-                mostrador.innerHTML+=`<p><strong>${nom}</strong>: ${valor}</p>`
-            }
-
-            document.getElementById("boto").onclick = function () {
-                history.back();
-            }
-        }
-    </script>
+    <script type="text/javascript" src="../js/mostruari.js"></script>
 </head>
 <body>
     <!-- EXERCICI 1. (Opcional) Crea la pàgina mostruari.html amb un formulari. Utilitza tots els tags vists al pdf. 
