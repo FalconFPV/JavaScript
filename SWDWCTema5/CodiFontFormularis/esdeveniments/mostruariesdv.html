@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ident{
+            overflow: scroll;
+        }
+    </style>
+</head>
+<!--  Mostruari d'esdeveniments. Creau la pàgina amb el següent:
+
+Un títol h1 que indiqui el que és la pàgina.
+
+Un paràgraf de text, amb un identificador. El text ha d’incloure una part amb negreta o cursiva.
+
+Un formulari amb un camp de text i dos botons, un de submit i un de reset.
+
+Un div, també amb un identificador. Aplicau-li un estil que posi l’overflow a scroll.
+
+Una funció afegeix(esdeveniment) amb un paràmetre. Ha d'afegir aquest paràmetre al principi de l'innerHTML 
+del div del punt anterior. Si voleu, programau un comptador que compti quantes vegades s'executa la funció 
+i afegiu-lo al principi del paràmetre.
+
+Programau tots els esdeveniment que pogueu al paràgraf i a la capsa de text. Tots els esdeveniment faran el mateix: 
+Cridar a la funció del punt anterior amb una cadena de text que indiqui quin esdeveniment s'ha llançat i a quin element, 
+per exemple: “paragraf: onmousedown”.
+
+Programau també els esdeveniments del form, del document i de window.
+
+Per evitar que el submit enviï el formulari i ens recarregui la pàgina utilitzau el preventDefault. -->
+<script>
+    function afegeix(esdeveniment){
+        document.getElementById('ident').innerHTML = esdeveniment;
+
+    }
+</script>
+<body>
+    <h1>Mostruari esdeveniments</h1>
+    <form>
+        <table>
+            <tr>
+                <td><input type="text"><i>Text</i></td>
+            </tr>
+            <tr>
+                <td><input type="reset" value="Reset"></td>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+            <div id="ident"></div>
+        </table>
+    </form>
+</body>
+</html>
